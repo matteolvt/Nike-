@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.before-navbar {
+    width: 100%;
+    height: 29px;
+    background-color: #003D98;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bnavbar-left {
+    height: 100%;
+    width: 35%;
+}
+
+.bnavbar-center {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bnavbar-center img {
+    width: 19px;
+    height: 19.15px;
+}
+
+.bnavbar-right {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bnavbar-right a {
+    color: #EDBB00;
+    text-decoration: none;
+}
