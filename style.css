@@ -36,10 +36,14 @@
     width: 35%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
 }
 
 .bnavbar-right a {
-    color: #EDBB00;
+    color: #EDBB00;                                                             
     text-decoration: none;
+}
+
+.bnavbar-right li {
+    list-style: none;
 }
