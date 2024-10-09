@@ -87,104 +87,6 @@ html, body {
     list-style: none;
 }
 
-.after-navbar {
-    width: 100%;
-    height: 92px;
-    display: flex;
-    position: relative;
-    align-items: center;
-}
-
-.anavbar-left {
-    position: absolute;
-    left: 0;
-    width: 33%; 
-    text-align: left;
-    padding-left: 100px;
-}
-
-.anavbar-left h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.anavbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: center;
-    gap: 30px; 
-}
-
-.anavbar-center a {
-    text-decoration: none;
-    color: black; 
-    align-items: center;
-}
-
-.presentation{
-    margin-top: 180px; 
-}
-
-.pres-txt {
-    font-size:2em; 
-    position: absolute;
-    left: 0;
-    width: 33%; 
-    text-align: left;
-    padding-left: 300px;
-}
-
-.pres-img {
-    display: flex;
-    justify-content: center;
-    padding-top:100px; 
-
-}
-
-.pres-img-1 img {
-    width: 1050px;
-    height: 500px;
-    padding:0; 
-}
-
-.pres-img-2 img {
-    width: 1050px;
-    height: 500px;
-    padding:0; 
-}
-
-.products {
-    margin-top: 180px; 
-    margin-bottom: 180px;
-}
-
-.product-txt {
-    font-size: 2em;
-    font-size:2em; 
-    position: absolute;
-    left: 0;
-    width: 33%; 
-    text-align: left;
-    padding-left: 300px;
-}
-
-.product-img {
-    display: flex;
-    justify-content: center;
-    padding-top:100px; 
-    padding-left: 30px;
-    padding-right: 30px;
-    gap:10px; 
-}
-
-.product-img img {
-    width: 600px;
-    height: 600px;
-}
-
 .navbar {
     width: 100%;
     height: 100px;
@@ -265,66 +167,16 @@ html, body {
     cursor: pointer;
 }
 
-.footer {
-    height: 475px;
-    width: 100%;
-    background-color: #A50044;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+.after-navbar {
+    padding-top: 80px; 
+    position: absolute;
+    left: 0;
+    width: 33%; 
+    text-align: left;
+    padding-left: 100px;
 }
 
-.footer-top {
-    width: 80%;
-    height: 85%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-top li {
-    list-style: none;
-    padding: 10px 0;
-}
-
-.footer-top a {
-    font-family: Vercetti, sans-serif;
-    color: #EDBB00;
-    text-decoration: none;
-}
-
-.terms-of-sales {
-    height: 80%;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-}
-
-.payments-box {
-    background-color: #EDBB00;
-    width: 33%;
-    height: 21%;
-}
-
-.help {
-    height: 80%;
-    width: 30%;
-}
-
-.company {
-    height: 80%;
-    width: 30%;
-}
-
-.footer-bottom {
-    width: 80%;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Vercetti, sans-serif;
-    color: #EDBB00;
+.after-navbar h3 {
+    margin: 0;
+    font-size: 1.5em;
 }
