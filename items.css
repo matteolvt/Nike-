@@ -180,3 +180,122 @@ html, body {
     margin: 0;
     font-size: 1.5em;
 }
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
+    padding: 20px;
+    padding-left: 300px; 
+    padding-top:250px; 
+    padding-bottom: 250px;
+}
+
+.product {
+    text-align: left; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    width: calc(33.33% - 20px); 
+    box-sizing: border-box; 
+}
+
+.product-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+}
+
+.product-image {
+    width: 500px; 
+    height: 500px; 
+}
+
+.product-info {
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 10px; 
+}
+
+h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.description,
+.colors {
+    color: grey;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: 18px;
+    margin-top:20px; 
+}
+
+.footer {
+    height: 475px;
+    width: 100%;
+    background-color: #A50044;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-top {
+    width: 80%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-top li {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.footer-top a {
+    font-family: Vercetti, sans-serif;
+    color: #EDBB00;
+    text-decoration: none;
+}
+
+.terms-of-sales {
+    height: 80%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.payments-box {
+    background-color: #EDBB00;
+    width: 33%;
+    height: 21%;
+}
+
+.help {
+    height: 80%;
+    width: 30%;
+}
+
+.company {
+    height: 80%;
+    width: 30%;
+}
+
+.footer-bottom {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Vercetti, sans-serif;
+    color: #EDBB00;
+}
