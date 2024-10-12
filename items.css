@@ -204,7 +204,8 @@ html, body {
 .product-link {
     text-decoration: none; 
     color: inherit; 
-    display: block; 
+    display: block;
+    
 }
 
 .product-image {
