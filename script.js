@@ -10,3 +10,24 @@ document.addEventListener('DOMContentLoaded', function() {
         },
     });
 });
+
+// Select essential element
+const cartButton = document.getElementById('cart-button');
+const cartPanel = document.getElementById('cart-panel');
+const closeCartButton = document.getElementById('close-cart');
+
+// When we click on the icon bag
+cartButton.addEventListener('click', function() {
+    cartPanel.style.display = 'block'; 
+    setTimeout(() => {
+        cartPanel.classList.add('active'); 
+    }, 10); 
+});
+
+// When we click on "close"
+closeCartButton.addEventListener('click', function() {
+    cartPanel.classList.remove('active'); 
+    setTimeout(() => {
+        cartPanel.style.display = 'none'; 
+    }, 300); 
+});
