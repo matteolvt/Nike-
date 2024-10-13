@@ -182,14 +182,13 @@ html, body {
 }
 
 .container {
+    width: 78%;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 30px; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
     padding: 20px;
-    padding-left: 300px; 
-    padding-top:250px; 
-    padding-bottom: 250px;
+    margin-top: 200px;
 }
 
 .product {
@@ -197,8 +196,8 @@ html, body {
     display: flex; 
     flex-direction: column;
     align-items: center; 
-    width: calc(33.33% - 20px); 
-    box-sizing: border-box; 
+    width: calc(33.33% - 20px); /* Garder cette règle pour la disposition en grille */
+    box-sizing: border-box;
 }
 
 .product-link {
@@ -208,13 +207,13 @@ html, body {
 }
 
 .product-image {
-    width: 500px; 
-    height: 500px; 
+    width: 300px;
+    height: 300px; 
 }
 
 .product-info {
-    background: rgba(255, 255, 255, 0.8); 
-    padding: 10px; 
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
 }
 
 h3 {
@@ -297,4 +296,116 @@ h3 {
     align-items: center;
     font-family: Vercetti, sans-serif;
     color: #EDBB00;
+}
+
+.main-container {
+    display: flex; /* Aligne filtres et produits côte à côte */
+    width: 100%; /* Prend toute la largeur de la page */
+    padding: 20px; /* Espacement autour du conteneur */
+    box-sizing: border-box;
+}
+
+.filter {
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative; /* Nécessaire pour positionner l'icône */
+}
+
+.filter-btn::after {
+    content: '+'; /* Utilisez un plus pour l'état par défaut */
+    font-size: 20px; /* Taille du symbole */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* Centrer verticalement */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition fluide */
+}
+
+.filter-btn.active::after {
+    content: '-'; /* Utilisez un moins quand le filtre est actif */
+    transform: translateY(-50%) scale(1.2); /* Agrandir le symbole */
+    opacity: 1; /* Rendre le symbole complètement visible */
+}
+
+.filter-content {
+    display: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.filter-content label {
+    display: block;
+    margin: 5px 0;
+}
+
+.filter-container {
+    width: 300px; /* Largeur fixe pour les filtres */
+    margin-right: 20px; /* Espace entre les filtres et les produits */
+    margin-top: 200px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px; /* Espace à gauche pour le checkmark */
+    cursor: pointer;
+    font-size: 16px; /* Ajustez la taille du texte si nécessaire */
+    user-select: none; /* Empêche la sélection du texte */
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0; /* Masque la checkbox originale */
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Taille du checkmark */
+    width: 20px; /* Taille du checkmark */
+    background-color: white; /* Couleur de fond par défaut */
+    border: 2px solid RGB(201, 201, 202); /* Bordure du checkmark */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: white; /* Change la couleur au survol */
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #000000; /* Couleur de fond lorsque coché */
+    border-color: #000000; /* Bordure lorsque coché */
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* Couleur du checkmark */
+    border-width: 0 3px 3px 0; /* Forme du checkmark */
+    transform: rotate(45deg); /* Rotation pour former le symbole de check */
 }

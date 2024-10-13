@@ -12,3 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+function toggleFilter(id) {
+    const content = document.getElementById(id);
+    const button = content.previousElementSibling; // Récupère le bouton du filtre
+    
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        button.classList.remove('active'); // Enlève la classe active si le filtre est fermé
+    } else {
+        content.style.display = "block";
+        button.classList.add('active'); // Ajoute la classe active si le filtre est ouvert
+    }
+}
+
+
+
