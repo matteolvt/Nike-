@@ -9,4 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
             clickable: true, // Rendre les points cliquables
         },
     });
+
 });
+
