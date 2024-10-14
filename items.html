@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
-
-
     <section class="before-navbar">
         <div class="bnavbar-left">
             <img src="./images/united-kingdom.png" alt="drapeau anglais">
@@ -26,7 +24,6 @@
             <li><a href="">sign in</a></li>
         </div>
     </section>
-
     <section class="navbar">
         <div class="navbar-left"></div>
         <div class="navbar-center">
@@ -54,7 +51,7 @@
     <div class="main-container">
         <div class="filter-container">
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('size')">Size 
+                <button class="filter-btn" onclick="toggleFilter('size', this)"> Size 
                     <span class="toggle-icon">+</span>
                 </button> 
                 <hr>
@@ -73,90 +70,88 @@
                     </label>
                 </div>
             </div>
-    
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('width')">Width 
+                <button class="filter-btn" onclick="toggleFilter('width', this)"> Width 
                     <span class="toggle-icon">+</span>
                 </button> 
                 <hr>
                 <div id="width" class="filter-content">
-                    <label class="checkbox-container">Small
+                    <label class="checkbox-container">Regular
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Medium
+                    <label class="checkbox-container">Wide
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Large
+                    <label class="checkbox-container">Extra Wide
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
                 </div>
             </div>
-    
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('act')">Activities 
+                <button class="filter-btn" onclick="toggleFilter('act', this)"> Activities 
                     <span class="toggle-icon">+</span>
                 </button> 
                 <hr>
                 <div id="act" class="filter-content">
-                    <label class="checkbox-container">Small
+                    <label class="checkbox-container">Running
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Medium
+                    <label class="checkbox-container">Walking
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Large
+                    <label class="checkbox-container">Training
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
                 </div>
             </div>
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('color')">Color 
+                <button class="filter-btn" onclick="toggleFilter('color', this)"> Color 
                     <span class="toggle-icon">+</span>
                 </button> 
                 <hr>
                 <div id="color" class="filter-content">
-                    <label class="checkbox-container">Small
+                    <label class="checkbox-container">Red
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Medium
+                    <label class="checkbox-container">Blue
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Large
+                    <label class="checkbox-container">Green
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
                 </div>
             </div>
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('model')">Model 
+                <button class="filter-btn" onclick="toggleFilter('model', this)"> Model 
                     <span class="toggle-icon">+</span>
                 </button> 
                 <hr>
                 <div id="model" class="filter-content">
-                    <label class="checkbox-container">Small
+                    <label class="checkbox-container">Model A
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Medium
+                    <label class="checkbox-container">Model B
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="checkbox-container">Large
+                    <label class="checkbox-container">Model C
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
                 </div>
             </div>
             <div class="filter">
-                <button class="filter-btn" data-filter="price" onclick="toggleFilter('price')">Price 
+                <button class="filter-btn" onclick="toggleFilter('price', this)"> Price 
                     <span class="toggle-icon">+</span>
                 </button> 
                 <hr>
@@ -185,95 +180,89 @@
             </div>
         </div>
         <div class="container">
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="medium" data-width="wide" data-activity="running" data-color="red" data-price="119.99" data-model="model a"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
                     <p class="colors">3 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
-            
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="large" data-width="regular" data-activity="walking" data-color="blue" data-price="52.99" data-model="model b"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">6 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">52.99€</p>
                 </div>
             </a>
-            
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="smal" data-width="narrow" data-activity="running" data-color="red" data-price="119.99" data-model="model a"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">8 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
-            
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="medium" data-width="extra wide" data-activity="running" data-color="red" data-price="119.99" data-model="model c"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">4 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
-            
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="large" data-width="narrow" data-activity="training" data-color="red" data-price="119.99" data-model="model c"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">5 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
-            
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="small" data-width="regular" data-activity="walking" data-color="red" data-price="119.99" data-model="model b"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">7 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="medium" data-width="wide" data-activity="training" data-color="red" data-price="119.99" data-model="model a"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">7 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="medium" data-width="regular" data-activity="running" data-color="red" data-price="119.99" data-model="model c"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">7 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
-            <a href="#" class="product-link"> 
+            <a href="#" class="product-link" data-size="medium" data-width="large" data-activity="training" data-color="red" data-price="119.99" data-model="model c"> 
                 <img src="./images/A_black_image.jpg" alt="Nike Air Force 1 ‘07" class="product-image">
                 <div class="product-info">
                     <h3>Nike Air Force 1 ‘07</h3>
                     <p class="description">Men Shoes</p>
-                    <p class="colors">7 Colors</p>
-                    <p class="price">119,99€</p>
+                    <p class="colors">3 Colors</p>
+                    <p class="price">119.99€</p>
                 </div>
             </a>
         </div>
     </div>
-
 
     <section class="footer">
         <div class="footer-top">
@@ -299,5 +288,6 @@
         <div class="footer-bottom">&copy; 2024 Nikeä</div>
     </section>
     <script src="script.js"></script>
+    <script src="filtres.js"></script>
 </body>
 </html>
