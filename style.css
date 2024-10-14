@@ -44,11 +44,11 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
 .bnavbar-right a {
-    color: #EDBB00;                                                             
+    color: #EDBB00;
     text-decoration: none;
     font-family: Vercetti, sans-serif;
 }
@@ -403,41 +403,4 @@
     font-family: Vercetti, sans-serif;
     color: #EDBB00;
 }
-
-.cart-panel {
-    position: fixed;
-    top: 0;
-    width: 300px;
-    right: -300px;
-    height: 100%;
-    background-color: #f4f4f4;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    transition: right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease, visibility 0.5s;
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0; 
-}
-
-.cart-panel.active {
-    right: 0;
-    visibility: visible; 
-    opacity: 1; 
-}
-
-.cart-panel.closing {
-    right: -300px; 
-    opacity: 0; 
-    visibility: hidden; 
-}
-
-#close-cart {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff4e50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
 
