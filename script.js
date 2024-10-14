@@ -40,31 +40,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     filters.forEach(filter => {
         filter.addEventListener('click', function(event) {
-            console.log("Filter button clicked"); // Vérification du clic
+            console.log("Filter button clicked");
             const filterId = this.getAttribute('onclick').match(/'(.*?)'/)[1];
-            toggleFilter(filterId, this); // Passez également le bouton
+            toggleFilter(filterId, this);
         });
     });
 });
 
 function toggleFilter(id, button) {
     const content = document.getElementById(id);
+    const toggleIcon = button.querySelector('.toggle-icon');
 
-    if (!content) {
-        console.error(`Le contenu de filtre avec l'ID '${id}' n'a pas été trouvé.`);
-        return;
-    }
-
-    // Maintenant, nous avons le bouton passé en argument
-    const toggleIcon = button.querySelector('.toggle-icon'); // Récupération correcte de l'icône
-    console.log("Toggle Icon:", toggleIcon); // Pour déboguer et vérifier l'icône
-
-    if (!toggleIcon) {
-        console.error('L\'icône de bascule n\'a pas été trouvée dans le bouton.', button);
-        return;
-    }
-
-    // Basculez l'affichage du contenu et changez le symbole de l'icône
     if (content.style.display === "block") {
         content.style.display = "none"; 
         toggleIcon.textContent = '+'; 
