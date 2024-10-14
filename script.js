@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function toggleFilter(id, button) {
     const content = document.getElementById(id);
+
     const toggleIcon = button.querySelector('.toggle-icon');
 
     if (content.style.display === "block") {
