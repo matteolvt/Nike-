@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
-    <script src="script.js"></script>
+
 
     <section class="before-navbar">
         <div class="bnavbar-left">
@@ -54,7 +54,10 @@
     <div class="main-container">
         <div class="filter-container">
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('size')">Size<span class="toggle-icon"></span> </button> <hr>
+                <button class="filter-btn" onclick="toggleFilter('size')">Size 
+                    <span class="toggle-icon">+</span>
+                </button> 
+                <hr>
                 <div id="size" class="filter-content">
                     <label class="checkbox-container">Small
                         <input type="checkbox">
@@ -72,7 +75,10 @@
             </div>
     
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('width')">Width<span class="toggle-icon"></span> </button> <hr>
+                <button class="filter-btn" onclick="toggleFilter('width')">Width 
+                    <span class="toggle-icon">+</span>
+                </button> 
+                <hr>
                 <div id="width" class="filter-content">
                     <label class="checkbox-container">Small
                         <input type="checkbox">
@@ -90,7 +96,10 @@
             </div>
     
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('act')">Activities<span class="toggle-icon"></span> </button> <hr>
+                <button class="filter-btn" onclick="toggleFilter('act')">Activities 
+                    <span class="toggle-icon">+</span>
+                </button> 
+                <hr>
                 <div id="act" class="filter-content">
                     <label class="checkbox-container">Small
                         <input type="checkbox">
@@ -107,7 +116,10 @@
                 </div>
             </div>
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('color')">Color<span class="toggle-icon"></span> </button> <hr>
+                <button class="filter-btn" onclick="toggleFilter('color')">Color 
+                    <span class="toggle-icon">+</span>
+                </button> 
+                <hr>
                 <div id="color" class="filter-content">
                     <label class="checkbox-container">Small
                         <input type="checkbox">
@@ -124,7 +136,10 @@
                 </div>
             </div>
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('model')">Model<span class="toggle-icon"></span> </button> <hr>
+                <button class="filter-btn" onclick="toggleFilter('model')">Model 
+                    <span class="toggle-icon">+</span>
+                </button> 
+                <hr>
                 <div id="model" class="filter-content">
                     <label class="checkbox-container">Small
                         <input type="checkbox">
@@ -141,7 +156,10 @@
                 </div>
             </div>
             <div class="filter">
-                <button class="filter-btn" onclick="toggleFilter('price')">Price<span class="toggle-icon"></span> </button> <hr>
+                <button class="filter-btn" data-filter="price" onclick="toggleFilter('price')">Price 
+                    <span class="toggle-icon">+</span>
+                </button> 
+                <hr>
                 <div id="price" class="filter-content">
                     <label class="checkbox-container">0-25€
                         <input type="checkbox">
@@ -280,6 +298,6 @@
         </div>
         <div class="footer-bottom">&copy; 2024 Nikeä</div>
     </section>
-    
+    <script src="script.js"></script>
 </body>
 </html>

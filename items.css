@@ -318,22 +318,17 @@ h3 {
     cursor: pointer;
     font-size: 16px;
     position: relative; /* Nécessaire pour positionner l'icône */
+    padding-right: 20px;
 }
 
-.filter-btn::after {
-    content: '+'; /* Utilisez un plus pour l'état par défaut */
-    font-size: 20px; /* Taille du symbole */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%); /* Centrer verticalement */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition fluide */
+.filter-btn .toggle-icon {
+    float: right; /* Place l'icône à droite */
+    font-size: 20px;
+    line-height: 1;
 }
 
-.filter-btn.active::after {
-    content: '-'; /* Utilisez un moins quand le filtre est actif */
-    transform: translateY(-50%) scale(1.2); /* Agrandir le symbole */
-    opacity: 1; /* Rendre le symbole complètement visible */
+.filter-btn.active .toggle-icon {
+    font-weight: bold; /* Peut-être rendre le "-" plus visible */
 }
 
 .filter-content {
@@ -346,6 +341,10 @@ h3 {
 .filter-content label {
     display: block;
     margin: 5px 0;
+}
+
+.toggle-icon {
+    display: inline;
 }
 
 .filter-container {
