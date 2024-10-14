@@ -44,4 +44,41 @@ function toggleFilter(id) {
     }
 }
 
+-
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-filters');
+    const filterContainer = document.querySelector('.filter-container-phone');
+
+    console.log('Toggle Button:', toggleButton);
+    console.log('Filter Container:', filterContainer);
+
+    // Gestion du bouton pour afficher/cacher le conteneur des filtres
+    toggleButton.addEventListener('click', function() {
+        console.log('Bouton cliqué');
+        filterContainer.classList.toggle('hidden');
+
+        // Change le texte du bouton en fonction de l'état de l'affichage
+        if (filterContainer.classList.contains('hidden')) {
+            toggleButton.textContent = 'Afficher les filtres';
+            console.log('Filtres cachés');
+        } else {
+            toggleButton.textContent = 'Masquer les filtres';
+            console.log('Filtres affichés');
+        }
+    });
+});
+
+// Fonction pour afficher/cacher le contenu d'un filtre
+function toggleFilterContent(id) {
+    const content = document.getElementById(id);
+    console.log('Toggle filter content for:', id);
+    content.classList.toggle('hidden'); // Utilisation de la classe hidden
+}
+
+
+
+
+
+
+
 
