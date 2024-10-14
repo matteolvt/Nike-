@@ -32,6 +32,10 @@ html, body {
     
 }
 
+.before-navbar span {
+    display: none;
+}
+
 .bnavbar-left {
     height: 100%;
     width: 35%;
@@ -53,7 +57,7 @@ html, body {
     color: #EDBB00;
     padding:0 10px; 
     font-size: 1em;
-    padding-bottom: 5cpx;
+    padding-bottom: 5px;
 }
 
 
@@ -319,22 +323,17 @@ h3 {
     cursor: pointer;
     font-size: 16px;
     position: relative; /* Nécessaire pour positionner l'icône */
+    padding-right: 20px;
 }
 
-.filter-btn::after {
-    content: '+'; /* Utilisez un plus pour l'état par défaut */
-    font-size: 20px; /* Taille du symbole */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%); /* Centrer verticalement */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition fluide */
+.filter-btn .toggle-icon {
+    float: right; /* Place l'icône à droite */
+    font-size: 20px;
+    line-height: 1;
 }
 
-.filter-btn.active::after {
-    content: '-'; /* Utilisez un moins quand le filtre est actif */
-    transform: translateY(-50%) scale(1.2); /* Agrandir le symbole */
-    opacity: 1; /* Rendre le symbole complètement visible */
+.filter-btn.active .toggle-icon {
+    font-weight: bold; /* Peut-être rendre le "-" plus visible */
 }
 
 .filter-content {
@@ -347,6 +346,10 @@ h3 {
 .filter-content label {
     display: block;
     margin: 5px 0;
+}
+
+.toggle-icon {
+    display: inline;
 }
 
 .filter-container {
@@ -411,16 +414,42 @@ h3 {
     transform: rotate(45deg); /* Rotation pour former le symbole de check */
 }
 
-.filtre-phone {
-    display: none;
+.cart-panel {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    right: -300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease, visibility 0.5s;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0; 
 }
 
-.container-phone {
-    display: none;
+.cart-panel.active {
+    right: 0;
+    visibility: visible; 
+    opacity: 1; 
 }
 
-.bnavbar-right span {
-    display: none;
+.cart-panel.closing {
+    right: -300px; 
+    opacity: 0; 
+    visibility: hidden; 
+}
+
+#close-cart {
+    margin-top: 20px;
+    padding-left: 250px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    width: 100%;
 }
 
 @media screen and (max-width: 768px) {
