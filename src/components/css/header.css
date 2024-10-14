@@ -78,6 +78,11 @@
     margin: 0 10px;
     position: relative;
     display: inline;
+<<<<<<< HEAD
+=======
+    color: #EDBB00;
+    cursor: pointer;
+>>>>>>> master
 }
 
 .bnavbar-right li:not(:first-child)::before {
@@ -100,7 +105,19 @@
 
 .navbar-left {
     height: 100%;
+<<<<<<< HEAD
     width: 35%;
+=======
+    width: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-left img {
+    height: 600px;
+    width: 60px;
+>>>>>>> master
 }
 
 .navbar-center {
@@ -126,7 +143,11 @@
 
 .navbar-right {
     height: 100%;
+<<<<<<< HEAD
     width: 35%;
+=======
+    width: 24%;
+>>>>>>> master
     display: flex;
     align-items: center;
 }
