@@ -2,11 +2,12 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import MySwiper from "./components/swiper";
 import ItemsList from "./components/itemsList";
 import Layout from "./components/layout";
-import Men from "./components/men"
+import ProductMen from "./components/men"
 import Help from "./components/help"
 import JoinUs from "./components/joinUs"
 import SignIn from "./components/signIn"
 import Products from "./components/products"
+import MenShoes from "./components/menShoes";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
 
       {
         path : "/men",
-        element : (<Men/>)
+        element : (<ProductMen/>)
       },
 
       {
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
       {
         path : "/products",
         element : (<Products/>)
+      },
+
+      {
+        path : "/men-shoes",
+        element : (<MenShoes/>)
       }
     ]
   }

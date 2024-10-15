@@ -22,7 +22,7 @@ const Header = () => {
             {
               isAuthenticated ? (
                 <>
-                <li>Salut {user.name} !</li>
+                <li>Hello {user.name} !</li>
                 <li onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Sign out</li>
                 </>
               ) : (
@@ -32,6 +32,33 @@ const Header = () => {
             
             
           </ul>
+          <span className="material-icons-outlined">search</span>
+            <span className="material-icons-outlined">shopping_bag</span>
+            <span className="material-icons-outlined">person</span>
+            <div className="menu-ham">
+                <input type="checkbox" className="check" id="menu-toggle"/>
+                <label htmlFor="menu-toggle" className="ham-menu">
+                  <>
+                    <span className="line line1"></span>
+                    <span className="line line2"></span>
+                    <span className="line line3"></span>
+                  </>
+                </label>
+                <ul className="menu-items">
+                    <li>
+                        <a href="#">Men</a>
+                    </li>
+                    <li>
+                        <a href="#">Women</a>
+                    </li>
+                    <li>
+                        <a href="#">Kids</a>
+                    </li>
+                    <li>
+                        <a href="#">Infos pratiques</a>
+                    </li>
+                </ul>
+            </div>
         </div>
       </section>
 
