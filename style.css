@@ -44,11 +44,11 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
 .bnavbar-right a {
-    color: #EDBB00;                                                             
+    color: #EDBB00;
     text-decoration: none;
     font-family: Vercetti, sans-serif;
 }
@@ -403,3 +403,4 @@
     font-family: Vercetti, sans-serif;
     color: #EDBB00;
 }
+
