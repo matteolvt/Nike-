@@ -39,6 +39,7 @@ html, body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    
 }
 
 .bnavbar-left img {
@@ -91,16 +92,106 @@ html, body {
     list-style: none;
 }
 
+.after-navbar {
+    width: 100%;
+    height: 92px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.anavbar-left {
+    position: absolute;
+    left: 0;
+    width: 33%; 
+    text-align: left;
+    padding-left: 100px;
+}
+
+.anavbar-left h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
 #an-phone {
     display: none;
 }
 
-.phone-part {
-    display: none;
+.anavbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    gap: 30px; 
 }
 
-.menu-ham {
-    display: none;
+.anavbar-center a {
+    text-decoration: none;
+    color: black; 
+    align-items: center;
+}
+
+.presentation{
+    margin-top: 180px; 
+}
+
+.pres-txt {
+    font-size:2em; 
+    position: absolute;
+    left: 0;
+    width: 33%; 
+    text-align: left;
+    padding-left: 300px;
+}
+
+.pres-img {
+    display: flex;
+    justify-content: center;
+    padding-top:100px; 
+
+}
+
+.pres-img-1 img {
+    width: 1050px;
+    height: 500px;
+    padding:0; 
+}
+
+.pres-img-2 img {
+    width: 1050px;
+    height: 500px;
+    padding:0; 
+}
+
+.products {
+    margin-top: 180px; 
+    margin-bottom: 180px;
+}
+
+.product-txt {
+    font-size: 2em;
+    font-size:2em; 
+    position: absolute;
+    left: 0;
+    width: 33%; 
+    text-align: left;
+    padding-left: 300px;
+}
+
+.product-img {
+    display: flex;
+    justify-content: center;
+    padding-top:100px; 
+    padding-left: 30px;
+    padding-right: 30px;
+    gap:10px; 
+}
+
+.product-img img {
+    width: 600px;
+    height: 600px;
 }
 
 .navbar {
@@ -183,74 +274,6 @@ html, body {
     cursor: pointer;
 }
 
-.after-navbar {
-    padding-top: 80px; 
-    position: absolute;
-    left: 0;
-    width: 33%; 
-    text-align: left;
-    padding-left: 100px;
-}
-
-.after-navbar h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 30px; 
-    padding: 20px;
-    padding-left: 300px; 
-    padding-top:250px; 
-    padding-bottom: 250px;
-}
-
-.product {
-    text-align: left; 
-    display: flex; 
-    flex-direction: column;
-    align-items: center; 
-    width: calc(33.33% - 20px); 
-    box-sizing: border-box; 
-}
-
-.product-link {
-    text-decoration: none; 
-    color: inherit; 
-    display: block; 
-}
-
-.product-image {
-    width: 500px; 
-    height: 500px; 
-}
-
-.product-info {
-    background: rgba(255, 255, 255, 0.8); 
-    padding: 10px; 
-}
-
-h3 {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.description,
-.colors {
-    color: grey;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.price {
-    font-size: 18px;
-    margin-top:20px; 
-}
-
 .footer {
     height: 475px;
     width: 100%;
@@ -313,6 +336,14 @@ h3 {
     align-items: center;
     font-family: Vercetti, sans-serif;
     color: #EDBB00;
+}
+
+.phone-part {
+    display: none;
+}
+
+.menu-ham {
+    display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -387,16 +418,20 @@ h3 {
         display: none;
     }
 
-    .navbar-left {
-        width: 25%
+    .anavbar-left {
+        position: absolute;
+        left: 0;
+        width: 200px;
+        text-align: left;
+        padding-left: 30px;
     }
 
-    .navbar-center {
-        width: 75%;
-    }
-
-    .navbar-right {
+    .anavbar-left h3 {
         display: none;
+    }
+
+    .anavbar-left #an-phone {
+        display: inline;
     }
 
     .phone-part {
@@ -566,6 +601,8 @@ h3 {
         transform: rotate(-40deg);
     }
 
+    
+    /* Menu items */
     .menu-items {
         text-align: center;
         position: fixed;

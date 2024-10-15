@@ -22,7 +22,7 @@ html, body {
 
 .before-navbar {
     width: 100%;
-    height: 29px;
+    height: 50px;
     /* height: 50px; pour les grands ecrans; */
     background-color: #003D98;
     display: flex;
@@ -30,6 +30,10 @@ html, body {
     justify-content: space-around;
     align-items: center;
     
+}
+
+.before-navbar span {
+    display: none;
 }
 
 .bnavbar-left {
@@ -42,8 +46,8 @@ html, body {
 }
 
 .bnavbar-left img {
-    height: 25px;
-    width: 25px;  
+    height: 35px;
+    width: 35px;  
 }
 
 .bnavbar-left a {
@@ -52,7 +56,8 @@ html, body {
     text-decoration: none;
     color: #EDBB00;
     padding:0 10px; 
-    font-size: 0.7em;
+    font-size: 1em;
+    padding-bottom: 5px;
 }
 
 
@@ -65,8 +70,8 @@ html, body {
 }
 
 .bnavbar-center img {
-    width: 19px;
-    height: 19.15px;
+    width: 39px;
+    height: 39.15px;
 }
 
 .bnavbar-right {
@@ -78,10 +83,6 @@ html, body {
     gap:15px;     
 }
 
-.bnavbar-right span{
-    display: none;
-}
-
 .bnavbar-right a {
     color: #EDBB00;                                                             
     text-decoration: none;
@@ -89,18 +90,6 @@ html, body {
 
 .bnavbar-right li {
     list-style: none;
-}
-
-#an-phone {
-    display: none;
-}
-
-.phone-part {
-    display: none;
-}
-
-.menu-ham {
-    display: none;
 }
 
 .navbar {
@@ -198,14 +187,13 @@ html, body {
 }
 
 .container {
+    width: 78%;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 30px; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
     padding: 20px;
-    padding-left: 300px; 
-    padding-top:250px; 
-    padding-bottom: 250px;
+    margin-top: 200px;
 }
 
 .product {
@@ -213,8 +201,8 @@ html, body {
     display: flex; 
     flex-direction: column;
     align-items: center; 
-    width: calc(33.33% - 20px); 
-    box-sizing: border-box; 
+    width: calc(33.33% - 20px); /* Garder cette règle pour la disposition en grille */
+    box-sizing: border-box;
 }
 
 .product-link {
@@ -224,13 +212,13 @@ html, body {
 }
 
 .product-image {
-    width: 500px; 
+    width: 500px;
     height: 500px; 
 }
 
 .product-info {
-    background: rgba(255, 255, 255, 0.8); 
-    padding: 10px; 
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
 }
 
 h3 {
@@ -315,6 +303,155 @@ h3 {
     color: #EDBB00;
 }
 
+.main-container {
+    display: flex; /* Aligne filtres et produits côte à côte */
+    width: 100%; /* Prend toute la largeur de la page */
+    padding: 20px; /* Espacement autour du conteneur */
+    box-sizing: border-box;
+}
+
+.filter {
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative; /* Nécessaire pour positionner l'icône */
+    padding-right: 20px;
+}
+
+.filter-btn .toggle-icon {
+    float: right; /* Place l'icône à droite */
+    font-size: 20px;
+    line-height: 1;
+}
+
+.filter-btn.active .toggle-icon {
+    font-weight: bold; /* Peut-être rendre le "-" plus visible */
+}
+
+.filter-content {
+    display: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.filter-content label {
+    display: block;
+    margin: 5px 0;
+}
+
+.toggle-icon {
+    display: inline;
+}
+
+.filter-container {
+    width: 300px; /* Largeur fixe pour les filtres */
+    margin-right: 20px; /* Espace entre les filtres et les produits */
+    margin-top: 200px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px; /* Espace à gauche pour le checkmark */
+    cursor: pointer;
+    font-size: 16px; /* Ajustez la taille du texte si nécessaire */
+    user-select: none; /* Empêche la sélection du texte */
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0; /* Masque la checkbox originale */
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Taille du checkmark */
+    width: 20px; /* Taille du checkmark */
+    background-color: white; /* Couleur de fond par défaut */
+    border: 2px solid RGB(201, 201, 202); /* Bordure du checkmark */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: white; /* Change la couleur au survol */
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #000000; /* Couleur de fond lorsque coché */
+    border-color: #000000; /* Bordure lorsque coché */
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* Couleur du checkmark */
+    border-width: 0 3px 3px 0; /* Forme du checkmark */
+    transform: rotate(45deg); /* Rotation pour former le symbole de check */
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    right: -300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease, visibility 0.5s;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0; 
+}
+
+.cart-panel.active {
+    right: 0;
+    visibility: visible; 
+    opacity: 1; 
+}
+
+.cart-panel.closing {
+    right: -300px; 
+    opacity: 0; 
+    visibility: hidden; 
+}
+
+#close-cart {
+    margin-top: 20px;
+    padding-left: 250px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    width: 100%;
+}
+
 @media screen and (max-width: 768px) {
     .before-navbar {
         width: 100%;
@@ -387,67 +524,66 @@ h3 {
         display: none;
     }
 
-    .navbar-left {
-        width: 25%
+    .after-navbar {
+        position: relative;
+        width: 100%; /* Full width */
+        text-align: left; /* Align the text to the left */
+        padding: 10px; /* Add some padding */
+        margin-top: 21px;
+        margin-bottom: -19px; /* Space above and below to separate from navbar and container-phone */
+        padding-left: 30px; /* Espacement à gauche */
     }
-
-    .navbar-center {
-        width: 75%;
-    }
-
-    .navbar-right {
+   
+   .filter-container {
         display: none;
-    }
-
-    .phone-part {
-        display: block;
-    }
-
-    .pc-part {
-        display: none;
-    }
+   }
 
     .container {
+        display: none;
+    }
+
+    .container-phone {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px; 
+        gap: 10px;
     }
 
-    .product-link {
+    .container-phone .product-link {
         text-decoration: none;
         color: inherit;
         display: block;
-        flex: 0 0 48%;  
+        flex: 0 0 48%;
         box-sizing: border-box;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
 
-    .product-image {
+    .container-phone .product-image {
         width: 100%;
-        aspect-ratio: 1 / 1; 
+        height: auto;
+        aspect-ratio: 1 / 1; /* Ensure images are square */
     }
 
-    .product-info {
+    .container-phone .product-info {
         background: rgba(255, 255, 255, 0.8);
         padding: 10px;
     }
 
-    h3 {
+    .container-phone h3 {
         margin-top: 5px;
-        font-size: 4vw; 
+        font-size: 4vw;
         font-weight: bold;
     }
 
-    .description, .colors {
+    .container-phone .description, .container-phone .colors {
         color: grey;
-        font-size: 3.5vw; 
+        font-size: 3.5vw;
         margin-top: 5px;
     }
 
-    .price {
-        font-size: 4vw; 
-        margin-top: 10px; 
+    .container-phone .price {
+        font-size: 4vw;
+        margin-top: 10px;
     }
 
     .footer {
@@ -504,105 +640,146 @@ h3 {
         text-align: center;
     }
 
-    .menu-ham {
+    .filtre-phone {
+        display: none;
+    }
+
+    #toggle-filters {
+        display: block;
+        padding: 10px;
+        background-color: #003D98;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .filtre-phone {
         display: block;
     }
 
-    .ham-menu {
-        position: relative;
-        top:5%; 
-        z-index: 1000; 
+    .filter-container-phone {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        border-radius: 0.25em;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 5px;
     }
-    
-    .ham-menu .line {
+
+    .filter {
+        margin-bottom: 10px;
+    }
+
+    .filter-btn {
         background-color: white;
-        border-radius: 0.5em;
-        width: 1rem;
-        height: 0.4rem;
-        margin: 0.05rem 0 ;
-    }
-    
-    .ham-menu .line1 {
-        transform-origin: 0% 0%;
-        transition: transform 100ms ease-in-out;
-        height: 0.2rem;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
     }
 
-    .ham-menu .line2 {
-        height: 0.2rem;
-    }
-    
-    .ham-menu .line3 {
-        transform-origin: 0% 100%;
-        transition: transform 100ms ease-in-out;
-        height: 0.2rem;
-    }
-    
-    .check {
+    .filter-btn::after {
+        content: '+';
+        font-size: 20px;
         position: absolute;
-        top: 8rem;
-        left: 8rem;
-        height: 3rem;
-        width: 3rem;
-        opacity: 0;
-        z-index: 3;
-    }
-    
-    .check:checked~.ham-menu .line1 {
-        display: block;
-        transform: rotate(40deg);
-    }
-    
-    .check:checked~.ham-menu .line2 {
-        opacity: 0;
-    }
-    
-    .check:checked~.ham-menu .line3 {
-        display: block;
-        transform: rotate(-40deg);
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .menu-items {
-        text-align: center;
-        position: fixed;
-        top:0; 
-        left:20%;
-        width: 80%;
-        height: 100%;
-        list-style: none;
-        opacity: 0;
-        font-size: 1.5em;
-        border: 4px solid rgb(217, 217, 217, 0.1);
-        background-color: rgb(217, 217, 217);
-        color:black; 
-        transform: translateX(100%);
-        transition: transform 300ms ease-in-out, opacity 200ms;
-        pointer-events: none;
-        z-index: 999;
-    }
-    
-    
-    .menu-items li {
-        color: black;
-    }
-    
-    .menu-items li a {
-        color: black;
-        text-decoration: none;
-    }
-    
-    .menu-items li a:hover {
-        color: rgb(174, 174, 174);
-    }
-    
-    .check:checked~.menu-items {
-        display: block;
-        transform: translateX(0%);
+    .filter-btn.active::after {
+        content: '-';
+        transform: translateY(-50%) scale(1.2);
         opacity: 1;
-        pointer-events: auto; 
+    }
+
+    .filter-content {
+        display: none;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .filter-content label {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        user-select: none;
+    }
+
+    .checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        border: 2px solid RGB(201, 201, 202);
+        border-radius: 4px;
+    }
+
+    .checkbox-container:hover input ~ .checkmark {
+        background-color: white;
+    }
+
+    .checkbox-container input:checked ~ .checkmark {
+        background-color: #000000;
+        border-color: #000000;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .checkbox-container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .checkbox-container .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
+
+    .hidden {
+        display: none;
+    }
+    .filter-content {
+        margin-left: 20px;
+    }
+    .checkbox-container {
+        display: block;
+        margin-bottom: 5px;
     }
 }
