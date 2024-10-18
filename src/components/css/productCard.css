@@ -1,0 +1,106 @@
+/* CSS pour ProductCard */
+
+.container {
+    background-color: white;
+    padding: 20px;
+    margin-left: 50px;
+    position: relative;
+    display: flex; /* Utilisation de flex pour un meilleur contrôle du positionnement */
+    flex-direction: column; /* Colonne pour que l'image soit au-dessus du texte */
+    align-items: flex-start; /* Aligne le contenu à gauche */
+  }
+  
+  
+  .product-link {
+    text-decoration: none; /* Supprime le soulignement */
+    color: inherit; /* Hérite de la couleur du parent */
+    width: 100%; /* S'assure que le lien couvre toute la carte */
+  }
+  
+  .product-image {
+    width: 500px; /* Largeur fixe de 500px */
+    height: 500px; /* Hauteur fixe de 500px pour un carré */
+    object-fit: cover; /* Assure que l'image couvre complètement le carré sans déformation */
+    margin-bottom: 10px; /* Espace entre l'image et le texte */
+    border-radius: 4px; /* Coins arrondis pour l'image */
+  }
+  
+  .product-info {
+    padding: 10px 0; /* Espace autour des informations du produit */
+    width: 100%; /* Pour s'assurer que le texte prend toute la largeur */
+  }
+  
+  .product-info h3 {
+    font-size: 18px; /* Taille du titre */
+    margin: 10px 0; /* Espacement autour du titre */
+  }
+  
+  .description {
+    font-size: 14px; /* Taille de la description */
+    color: #777; /* Couleur du texte de la description */
+    margin: 5px 0; /* Espace autour de la description */
+  }
+  
+  .colors {
+    font-size: 14px; /* Taille pour le nombre de couleurs */
+    margin: 5px 0; /* Espace autour du texte des couleurs */
+  }
+  
+  .price {
+    font-size: 16px; /* Taille du prix */
+    color: #000; /* Couleur du prix */
+    margin: 10px 0; /* Espace autour du prix */
+    font-weight: bold; /* Mettre le prix en gras */
+  }
+  
+  @media screen and (max-width: 768px) {
+    
+    body {
+        overflow-x: hidden; /* Empêche l'overflow horizontal sur la page */
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* Espacement entre les produits */
+        margin: 0; /* Supprime les marges autour de la conteneur */
+    }
+
+    .container .product-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        flex: 0 0 48%; /* Permet d'avoir 2 produits par ligne */
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .container .product-image {
+        width: 100%; /* S'assure que l'image prend toute la largeur de son conteneur */
+        height: auto; /* Garde l'aspect ratio de l'image */
+        aspect-ratio: 1 / 1; /* Pour une image carrée */
+    }
+
+    .container .product-info {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+    }
+
+    .container h3 {
+        margin-top: 5px;
+        font-size: 4vw; /* Utilise vw pour rendre la taille de la police responsive */
+        font-weight: bold;
+    }
+
+    .container .description, .container .colors {
+        color: grey;
+        font-size: 3.5vw;
+        margin-top: 5px;
+    }
+
+    .container .price {
+        font-size: 4vw;
+        margin-top: 10px;
+    }
+}
