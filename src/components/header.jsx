@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "./css/header.css";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
 
 const Header = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+  const [isCartOpen, setIsCartOpen] = useState(false);
   return (
     <>
       <section className="before-navbar">
@@ -31,7 +33,7 @@ const Header = () => {
             }
           </ul>
           <span className="material-icons-outlined">search</span>
-          <span className="material-icons-outlined">shopping_bag</span>
+          <span className="material-icons-outlined" onClick={() => setIsCartOpen(!isCartOpen)}>shopping_bag</span>
           <span className="material-symbols-outlined">person</span>
           <div className="menu-ham">
             <input type="checkbox" className="check" id="menu-toggle" />
@@ -81,10 +83,24 @@ const Header = () => {
           </div>
           <div className="icons">
             <span className="material-icons-outlined">favorite_border</span>
-            <span className="material-icons-outlined">shopping_bag</span>
+            <span className="material-icons-outlined" onClick={() => setIsCartOpen(!isCartOpen)}>shopping_bag</span>
           </div>
         </div>
       </section>
+      <div className={`cart ${isCartOpen ? "open" : ""}`}>
+        <div className="cart-header">
+          <h2>Your Cart</h2>
+          <span
+            className="material-icons-outlined close-cart"
+            onClick={() => setIsCartOpen(false)}
+          >
+            close
+          </span>
+        </div>
+        <div className="cart-body">
+          <p>Your cart is empty.</p>
+        </div>
+      </div>
     </>
   );
 };

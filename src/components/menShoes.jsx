@@ -13,6 +13,15 @@ const MenShoes = () => {
     price: [],
   });
 
+  const [openFilters, setOpenFilters] = useState({
+    size: false,
+    width: false,
+    activity: false,
+    color: false,
+    model: false,
+    price: false,
+  });
+
   const handleFilterChange = (category, value) => {
     setFilters((prevFilters) => {
       const isSelected = prevFilters[category].includes(value);
@@ -26,12 +35,17 @@ const MenShoes = () => {
   };
 
   const toggleFilter = (id) => {
+    // Gestion de l'affichage du contenu du filtre
     const element = document.getElementById(id);
     if (element.style.display === "block") {
       element.style.display = "none";
     } else {
       element.style.display = "block";
     }
+    setOpenFilters((prevOpenFilters) => ({
+      ...prevOpenFilters,
+      [id]: !prevOpenFilters[id], // Inverse l'état actuel (ouvert/fermé)
+    }));
   };
 
   useEffect(() => {
@@ -104,11 +118,8 @@ const MenShoes = () => {
           <div className="filter-container">
             {/* Filtres de taille */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("size")}
-              >
-                Size <span className="toggle-icon">+</span>
+              <button className="filter-btn" onClick={() => toggleFilter("size")}>
+                Size <span className="toggle-icon">{openFilters.size ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="size" className="filter-content">
@@ -139,13 +150,10 @@ const MenShoes = () => {
               </div>
             </div>
 
-            {/* Filtres de largeur */}
+            {/* Répète cette structure pour chaque filtre */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("width")}
-              >
-                Width <span className="toggle-icon">+</span>
+              <button className="filter-btn" onClick={() => toggleFilter("width")}>
+                Width <span className="toggle-icon">{openFilters.width ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="width" className="filter-content">
@@ -165,72 +173,38 @@ const MenShoes = () => {
                   />
                   <span className="checkmark"></span>
                 </label>
-                <label className="checkbox-container">
-                  Extra Wide
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("width", "extra-wide")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
               </div>
             </div>
-
-            {/* Filtres d'activité */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("activity")}
-              >
-                Activity <span className="toggle-icon">+</span>
+              <button className="filter-btn" onClick={() => toggleFilter("activities")}>
+                Activities <span className="toggle-icon">{openFilters.activities ? "-" : "+"}</span>
               </button>
               <hr />
-              <div id="activity" className="filter-content">
+              <div id="activities" className="filter-content">
                 <label className="checkbox-container">
                   Running
                   <input
                     type="checkbox"
-                    onChange={() => handleFilterChange("activity", "running")}
+                    onChange={() => handleFilterChange("activities", "running")}
                   />
                   <span className="checkmark"></span>
                 </label>
                 <label className="checkbox-container">
-                  Walking
+                  Trail
                   <input
                     type="checkbox"
-                    onChange={() => handleFilterChange("activity", "walking")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Training
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("activity", "training")}
+                    onChange={() => handleFilterChange("activities", "Trail")}
                   />
                   <span className="checkmark"></span>
                 </label>
               </div>
             </div>
-
-            {/* Filtres de couleur */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("color")}
-              >
-                Color <span className="toggle-icon">+</span>
+              <button className="filter-btn" onClick={() => toggleFilter("color")}>
+                Color <span className="toggle-icon">{openFilters.color ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="color" className="filter-content">
-                <label className="checkbox-container">
-                  Red
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("color", "red")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
                 <label className="checkbox-container">
                   Blue
                   <input
@@ -240,23 +214,18 @@ const MenShoes = () => {
                   <span className="checkmark"></span>
                 </label>
                 <label className="checkbox-container">
-                  Green
+                  Red
                   <input
                     type="checkbox"
-                    onChange={() => handleFilterChange("color", "green")}
+                    onChange={() => handleFilterChange("color", "red")}
                   />
                   <span className="checkmark"></span>
                 </label>
               </div>
             </div>
-
-            {/* Filtres de modèle */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("model")}
-              >
-                Model <span className="toggle-icon">+</span>
+              <button className="filter-btn" onClick={() => toggleFilter("model")}>
+                Model <span className="toggle-icon">{openFilters.model ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="model" className="filter-content">
@@ -264,7 +233,7 @@ const MenShoes = () => {
                   Model A
                   <input
                     type="checkbox"
-                    onChange={() => handleFilterChange("model", "model-a")}
+                    onChange={() => handleFilterChange("model", "model a")}
                   />
                   <span className="checkmark"></span>
                 </label>
@@ -272,28 +241,15 @@ const MenShoes = () => {
                   Model B
                   <input
                     type="checkbox"
-                    onChange={() => handleFilterChange("model", "model-b")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Model C
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("model", "model-c")}
+                    onChange={() => handleFilterChange("model", "model b")}
                   />
                   <span className="checkmark"></span>
                 </label>
               </div>
             </div>
-
-            {/* Filtres de prix */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("price")}
-              >
-                Price <span className="toggle-icon">+</span>
+              <button className="filter-btn" onClick={() => toggleFilter("price")}>
+                Price <span className="toggle-icon">{openFilters.price ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="price" className="filter-content">
@@ -330,10 +286,10 @@ const MenShoes = () => {
                   <span className="checkmark"></span>
                 </label>
                 <label className="checkbox-container">
-                  Over 150€
+                  150-200€
                   <input
                     type="checkbox"
-                    onChange={() => handleFilterChange("price", "over-150")}
+                    onChange={() => handleFilterChange("price", "150-200")}
                   />
                   <span className="checkmark"></span>
                 </label>
