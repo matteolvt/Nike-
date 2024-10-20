@@ -1,0 +1,356 @@
+
+
+.carousel-wrapper {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: white;
+    font-family: 'inter',sans-serif;
+    width: 50%;
+  }
+  
+  .carousel-container {
+    display: flex;
+    background-color: none;
+  }
+  
+  .carousel {
+    width: 400px; /* Laissez la largeur du conteneur doublée */
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  
+  
+  .carousel-inner {
+    display: flex;
+    width: 200%; /* Doublez la largeur du conteneur */
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    width: 50%; /* Chaque élément occupe 50% de la largeur du conteneur */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Empêche la réduction de la taille de l'élément */
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .thumbnails {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  
+  .thumbnail-item {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .thumbnail-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    margin-right: 30px;
+  }
+  
+  .navigate-img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  #prevBtn, #nextBtn {
+    position: absolute;
+    background-color: white;
+    top: 90%; 
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color:rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  #prevBtn {
+    left: 80%;
+  }
+  
+  #nextBtn {
+    right: 2%;
+  }
+  
+  .infos {  
+    background-color: white;
+    margin: 50px;
+    bottom:420px;
+    left: 350px;
+    justify-content:left ;
+  
+  }
+  
+  .infos p{
+    font-size: 1.1em;
+  
+  }
+  
+  .cliquable button {
+    background-color: black;
+    color:white;
+    border-radius: 30px;
+    border:black;
+    font-size: 1.2em;
+    width: 400px;
+    height: 60px;
+    margin-left:50px ;
+  }
+  
+  .description {
+    color: grey;
+    padding-top:5px; 
+    padding-bottom :30px; 
+  }
+  
+  .size-container {
+    margin-top:100px; 
+    /* margin: 0 auto;  */
+    padding: 0; /* Aucune marge interne */
+  }
+  
+  .size {
+    width: 100%;
+  }
+  
+  .product {
+    width: 50%;
+    margin-top:-50px;
+  }
+  
+  .product_size {
+    display: flex; /* Utiliser flexbox pour disposer les éléments */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    gap: 5px; /* Espacement entre les boutons */
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 0; /* Supprimer le padding par défaut */
+    margin: 0; /* Supprimer la marge par défaut */
+    justify-content: flex-start; /* Aligner les boutons à gauche */
+  }
+  
+  .product_size li {
+    flex: 0 0 auto; /* Garder la taille des éléments */
+    margin: 0; /* Supprimer la marge */
+  }
+  
+  input[type="radio"] {
+    display: none; 
+  }
+  
+  
+  label {
+    display: flex; /* Utilise flexbox pour centrer */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    width: 70px; /* Largeur fixe pour tous les boutons */
+    height: 40px; /* Hauteur fixe pour tous les boutons */
+    padding: 0; /* Ajuste le padding à 0 */
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+    margin: 0; /* Aucune marge */
+    font-size: 1.1em; /* Taille de police */
+  }
+  
+  
+  input[type="radio"]:checked + label {
+    border-color: black; 
+    background-color: #fff;
+    color: RGB(44, 47, 59);
+  }
+  
+  input[type="radio"]:disabled + label {
+    background-color: #f0f0f0;
+    color: #ccc;
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  ul.product_size {
+    width: 400px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 1.5em;
+  }
+  
+  .product-container {
+    display: flex; /* Utilise flexbox pour aligner les enfants côte à côte */
+    justify-content: space-between; /* Espace entre les éléments */
+    width: 100%; /* Prend toute la largeur */
+    max-width: 1200px; /* Largeur maximale (ajuste selon tes besoins) */
+    margin: 0 auto; /* Centrer le conteneur dans la page */
+    align-items: flex-start; /* Aligner les éléments au début (en haut) */
+  }
+  
+  #fav {
+    margin-top:10px; 
+    color: black;
+    background-color: white;
+     border: 1px solid black;
+  }
+  
+  .cliquable {
+    margin-bottom:100px; 
+  }
+  
+  .cliquable span {
+    margin-top:2px, 
+  }
+  
+  .color-container {
+    width: 400px;
+    display: flex;
+  }
+  
+  
+  .color {
+    margin-top:30px; 
+  }
+  
+  .color label {
+    display: inline-block;
+    width: 60px; /* largeur du bouton */
+    height: 60px; /* hauteur du bouton */
+    background-size: cover; /* pour que l'image couvre tout le bouton */
+    border-radius: 5px; /* coins légèrement arrondis (ou 0 pour un carré parfait) */
+    cursor: pointer; /* pour le style du curseur */
+  }
+  
+ 
+  .color label[for="color_1"] {
+    background-image: url('./images/NIKE+DUNK+LOW.png');
+  }
+  
+  .color label[for="color_2"] {
+    background-image: url('./images/NIKE+DUNK+LOW+RETRO+BLUE.png'); 
+  }
+  
+  .color label[for="color_3"] {
+    background-image: url('./images/NIKE+DUNK+LOW+RETRO+PURPLE.png'); 
+  }
+  
+  .color input[type="radio"] {
+    display: none; 
+  }
+  
+  @media (max-width: 768px) {
+
+    #thumbnailContainer {
+        display: none;
+    }
+
+    .product-container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .carousel-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Prend toute la largeur */
+        padding: 0;
+    }
+
+    .carousel-container {
+        justify-content: center;
+    }
+
+    .carousel {
+        width: 90%; /* Ajuste la largeur pour prendre la majeure partie de l'écran */
+        max-width: 400px; /* Limite la taille maximale */
+    }
+
+    .carousel-inner {
+        width: 100%; /* Prend toute la largeur du conteneur */
+    }
+
+    .carousel-item {
+        width: 100%; /* Prend toute la largeur */
+    }
+
+    .product {
+        width: 100%;
+        margin: 0;
+    }
+
+    .size-container {
+        margin-top: 20px;
+    }
+
+    .color-container {
+        width: 100%;
+        flex-direction: row; /* Réorganiser les couleurs en ligne */
+        justify-content: space-around;
+        margin-left: 12px;
+    }
+
+    .product_size {
+        width: 100%; /* Prend toute la largeur */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Ajoute de l'espacement entre les tailles */
+        padding: 10px 0;
+    }
+
+    .product_size li {
+        margin: 0; /* Enlève la marge */
+    }
+
+    .cliquable {
+        display: flex;
+        flex-direction: column; /* Permet d'avoir les boutons l'un au-dessus de l'autre */
+        align-items: center; /* Centre les boutons horizontalement */
+        width: 90%; /* Ajuste la largeur pour éviter d'être collé au bord */
+        margin-right: 50px; /* Centre le conteneur et ajoute de l'espace au-dessus et en dessous */
+    }
+
+    .cliquable button {
+        width: 100%; /* Prend toute la largeur du conteneur .cliquable */
+        margin-bottom: 10px; /* Ajoute un espace entre les boutons */
+    }
+
+    .infos {
+        margin-left: 21px;
+    }
+
+    .size {
+        margin-left: 10px;
+    }
+}

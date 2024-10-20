@@ -8,7 +8,7 @@ const SingleItem = () => {
         <p>Your bag is empty</p>
       </div>
       <main>
-        <div className="main-container">
+        <div className="product-container">
           <div className="carousel-wrapper">
             <div className="carousel-container">
               <div className="thumbnails" id="thumbnailContainer"></div>
