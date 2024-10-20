@@ -70,8 +70,8 @@ const Header = () => {
           <ul>
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/men">Men</Link></li>  
-            <li><a href="#">Women</a></li> 
-            <li><a href="#">Kids</a></li>  
+            <li><Link to="/women">Women</Link></li> 
+            <li><Link to="/kids">Kids</Link></li>  
           </ul>
         </div>
         <div className="navbar-right">

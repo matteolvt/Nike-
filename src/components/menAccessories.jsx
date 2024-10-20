@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./css/menShoes.css";
+import "./css/menAccessories.css";
 import ProductCard from "./productCard";
 
-const MenShoes = () => {
+const MenAccessories = () => {
   const [filters, setFilters] = useState({
     size: [],
     width: [],
@@ -97,13 +97,14 @@ const MenShoes = () => {
     },
     // Ajoute d'autres modèles Nike si nécessaire
   ];
+  
 
   return (
     <>
       <section className="after-navbar">
         <div className="anavbar-left">
-          <h3>Men&apos;s Shoes</h3>
-          <h3 id="an-phone">Men&apos;s Shoes</h3>
+          <h3>Men&apos;s Accessories</h3>
+          <h3 id="an-phone">Men&apos;s Accessories</h3>
         </div>
         <div className="anavbar-center">
           <Link to="/men-shoes">Shoes</Link>
@@ -117,14 +118,8 @@ const MenShoes = () => {
           <div className="filter-container">
             {/* Filtres de taille */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("size")}
-              >
-                Size{" "}
-                <span className="toggle-icon">
-                  {openFilters.size ? "-" : "+"}
-                </span>
+              <button className="filter-btn" onClick={() => toggleFilter("size")}>
+                Size <span className="toggle-icon">{openFilters.size ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="size" className="filter-content">
@@ -157,14 +152,8 @@ const MenShoes = () => {
 
             {/* Répète cette structure pour chaque filtre */}
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("width")}
-              >
-                Width{" "}
-                <span className="toggle-icon">
-                  {openFilters.width ? "-" : "+"}
-                </span>
+              <button className="filter-btn" onClick={() => toggleFilter("width")}>
+                Width <span className="toggle-icon">{openFilters.width ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="width" className="filter-content">
@@ -187,14 +176,8 @@ const MenShoes = () => {
               </div>
             </div>
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("activities")}
-              >
-                Activities{" "}
-                <span className="toggle-icon">
-                  {openFilters.activities ? "-" : "+"}
-                </span>
+              <button className="filter-btn" onClick={() => toggleFilter("activities")}>
+                Activities <span className="toggle-icon">{openFilters.activities ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="activities" className="filter-content">
@@ -217,14 +200,8 @@ const MenShoes = () => {
               </div>
             </div>
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("color")}
-              >
-                Color{" "}
-                <span className="toggle-icon">
-                  {openFilters.color ? "-" : "+"}
-                </span>
+              <button className="filter-btn" onClick={() => toggleFilter("color")}>
+                Color <span className="toggle-icon">{openFilters.color ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="color" className="filter-content">
@@ -247,14 +224,8 @@ const MenShoes = () => {
               </div>
             </div>
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("model")}
-              >
-                Model{" "}
-                <span className="toggle-icon">
-                  {openFilters.model ? "-" : "+"}
-                </span>
+              <button className="filter-btn" onClick={() => toggleFilter("model")}>
+                Model <span className="toggle-icon">{openFilters.model ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="model" className="filter-content">
@@ -277,14 +248,8 @@ const MenShoes = () => {
               </div>
             </div>
             <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("price")}
-              >
-                Price{" "}
-                <span className="toggle-icon">
-                  {openFilters.price ? "-" : "+"}
-                </span>
+              <button className="filter-btn" onClick={() => toggleFilter("price")}>
+                Price <span className="toggle-icon">{openFilters.price ? "-" : "+"}</span>
               </button>
               <hr />
               <div id="price" className="filter-content">
@@ -351,4 +316,4 @@ const MenShoes = () => {
   );
 };
 
-export default MenShoes;
+export default MenAccessories;

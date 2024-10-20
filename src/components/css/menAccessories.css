@@ -1,0 +1,240 @@
+.main-container {
+    display: flex;
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0;
+}
+
+/* Container des filtres */
+.filter-container {
+    width: 400px; /* Ajuste cette valeur pour une largeur plus grande */
+    padding: 20px;
+    margin-right: 20px; /* Espace entre les filtres et les produits */
+}
+
+/* Style des filtres individuels */
+.filter {
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    width: 100%; /* Fixe la largeur à 100% du conteneur parent */
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative; /* Nécessaire pour positionner l'icône */
+    padding-right: 20px;
+    display: flex; /* Utilise flexbox pour aligner le texte et l'icône sur la même ligne */
+    justify-content: space-between; /* Espace entre le texte et l'icône */
+    align-items: center; /* Aligner verticalement le contenu */
+}
+
+.filter-btn .toggle-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.filter-btn.active .toggle-icon {
+    font-weight: bold; /* Peut-être rendre le "-" plus visible */
+}
+
+.filter-content {
+    display: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%; /* Fixe la largeur à 100% du conteneur parent */
+}
+
+.filter-content label {
+    display: block;
+    margin: 5px 0;
+}
+
+.toggle-icon {
+    display: inline;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px; /* Espace à gauche pour le checkmark */
+    cursor: pointer;
+    font-size: 16px; /* Ajustez la taille du texte si nécessaire */
+    user-select: none; /* Empêche la sélection du texte */
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0; /* Masque la checkbox originale */
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Taille du checkmark */
+    width: 20px; /* Taille du checkmark */
+    background-color: white; /* Couleur de fond par défaut */
+    border: 2px solid RGB(201, 201, 202); /* Bordure du checkmark */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: white; /* Change la couleur au survol */
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #000000; /* Couleur de fond lorsque coché */
+    border-color: #000000; /* Bordure lorsque coché */
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* Couleur du checkmark */
+    border-width: 0 3px 3px 0; /* Forme du checkmark */
+    transform: rotate(45deg); /* Rotation pour former le symbole de check */
+}
+
+/* Container des produits */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.product-list .product-card {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-list .product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+.product-card p {
+    font-size: 14px;
+    color: #777;
+}
+
+.product-card .price {
+    font-size: 16px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.product-card button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    * {
+        margin: 0; 
+        padding: 0;
+    }
+
+    .main-container {
+        display: block;
+        padding-top: 20px;
+        max-width: 100%; /* Ajuste la largeur maximale pour les appareils mobiles */
+        margin: 0;
+    }
+
+    /* Container des filtres */
+    .filter-container {
+        display: none; /* Masquer les filtres sur mobile */
+    }
+
+    /* Container des produits */
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne sur téléphone */
+        gap: 10px;
+        margin: 0; /* Supprime la marge à gauche */
+        justify-items: center; /* Centre les éléments dans le grid */
+    }
+
+    .product-list .product-card {
+        background-color: white;
+        text-align: center;
+        transition: transform 0.3s;
+        margin-bottom: 10px; /* Espacement en bas pour éviter le contact avec d'autres éléments */
+        display: flex; /* Utilisez Flexbox pour aligner le contenu */
+        flex-direction: column; /* Aligne le contenu verticalement */
+        justify-content: space-between; /* Assure que les éléments prennent toute la hauteur disponible */
+        height: 100%; /* Assure que les cartes prennent toute la hauteur du conteneur */
+        width: 100%; /* Assure que les cartes prennent toute la largeur disponible */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoutez une légère ombre pour un effet esthétique */
+    }
+
+    .product-card img {
+        width: 100%; /* Assure que l'image prend toute la largeur */
+        height: 300px; /* Définissez une hauteur fixe pour l'image */
+        object-fit: cover; /* Ajuste l'image pour couvrir le conteneur sans déformer */
+    }
+
+    .product-card h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .product-card p {
+        font-size: 14px;
+        color: #777;
+    }
+
+    .product-card .price {
+        font-size: 16px;
+        color: #000;
+        margin: 10px 0;
+    }
+
+    .product-card button {
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .footer {
+        height: 100%;
+    }
+}

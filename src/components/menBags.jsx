@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./css/menShoes.css";
+import "./css/menBags.css";
 import ProductCard from "./productCard";
 
-const MenShoes = () => {
+const MenBags = () => {
   const [filters, setFilters] = useState({
     size: [],
     width: [],
@@ -102,8 +102,8 @@ const MenShoes = () => {
     <>
       <section className="after-navbar">
         <div className="anavbar-left">
-          <h3>Men&apos;s Shoes</h3>
-          <h3 id="an-phone">Men&apos;s Shoes</h3>
+          <h3>Men&apos;s Bags</h3>
+          <h3 id="an-phone">Men&apos;s Bags</h3>
         </div>
         <div className="anavbar-center">
           <Link to="/men-shoes">Shoes</Link>
@@ -351,4 +351,4 @@ const MenShoes = () => {
   );
 };
 
-export default MenShoes;
+export default MenBags;

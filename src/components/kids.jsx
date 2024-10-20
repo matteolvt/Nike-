@@ -1,19 +1,19 @@
-import "./css/men.css";
+import "./css/kids.css";
 import { Link } from "react-router-dom";
 
-const ProductMen = () => {
+const ProductKids = () => {
   return (
     <>
       <section className="after-navbar">
         <div className="anavbar-left">
-          <h3>Men</h3>
-          <h3 id="an-phone">Men&apos;s Products</h3>
+          <h3>Kids</h3>
+          <h3 id="an-phone">Kid&apos;s Products</h3>
         </div>
         <div className="anavbar-center">
-          <Link to="/men-shoes">Shoes</Link>
-          <Link to="/men-clothes">Clothing</Link>
-          <Link to="/men-bags">Bag</Link>
-          <Link to="/men-accessories">Accessories</Link>
+          <Link to="/kids-shoes">Shoes</Link>
+          <Link to="/kids-clothes">Clothing</Link>
+          <Link to="/kids-bags">Bag</Link>
+          <Link to="/kids-accessories">Accessories</Link>
         </div>
       </section>
       <main>
@@ -51,4 +51,4 @@ const ProductMen = () => {
   );
 };
 
-export default ProductMen;
+export default ProductKids;
