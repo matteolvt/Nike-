@@ -25,7 +25,7 @@ const MenShoes = () => {
   const products = [
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Force 1 ‘07",
+      name: "Air Max Plus Tn Patta FC Barcelona",
       description: "Men Shoes",
       size: 43,
       width: "wide",
@@ -36,7 +36,7 @@ const MenShoes = () => {
     },
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Max",
+      name: "Nike Air Max Plus Drift",
       description: "Men Shoes",
       size: 42,
       width: "regular",

@@ -55,46 +55,33 @@ const KidsAccessories = () => {
   const products = [
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Force 1 ‘07",
+      name: "Home Kit socks – Junior",
       description: "Men Shoes",
-      colors: 3,
-      price: 119.99,
+      colors: 1,
+      price: 13.99,
     },
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Max",
+      name: "FC Barcelona Socks - Boys",
       description: "Men Shoes",
+      colors: 1,
+      price: 13.99,
+    },
+    {
+      image: "./images/A_black_image.jpg",
+      name: "FC Barcelone Dri-FIT Club",
+      description: "Nike Football Soft Cap for Teens",
       colors: 2,
-      price: 129.99,
+      price: 22.99,
     },
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Zoom Pegasus",
-      description: "Men Shoes",
-      colors: 4,
-      price: 139.99,
+      name: "FC Barcelona Academy",
+      description: "Nike Therma-FIT Kids' Football Gloves",
+      colors: 1,
+      price: 24.99,
     },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike React Infinity Run",
-      description: "Men Shoes",
-      colors: 3,
-      price: 149.99,
-    },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Blazer Mid ‘77",
-      description: "Men Shoes",
-      colors: 3,
-      price: 99.99,
-    },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Air VaporMax",
-      description: "Men Shoes",
-      colors: 2,
-      price: 199.99,
-    },
+
     // Ajoute d'autres modèles Nike si nécessaire
   ];
 

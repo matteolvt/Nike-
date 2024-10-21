@@ -55,46 +55,49 @@ const MenBags = () => {
   const products = [
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Force 1 ‘07",
-      description: "Men Shoes",
-      colors: 3,
-      price: 119.99,
+      name: "Backpack Barça crest",
+      description: "Men Bags",
+      colors: 1,
+      price: 49.99,
     },
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Max",
-      description: "Men Shoes",
-      colors: 2,
-      price: 129.99,
+      name: "Shoe bag Barça crest",
+      description: "Men Bags",
+      colors: 1,
+      price: 29.99,
     },
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air Zoom Pegasus",
-      description: "Men Shoes",
-      colors: 4,
-      price: 139.99,
+      name: "Backpack FC Barcelona Navy blue",
+      description: "Men Bags",
+      colors: 1,
+      price: 79.99,
     },
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike React Infinity Run",
-      description: "Men Shoes",
-      colors: 3,
-      price: 149.99,
+      name: "Blue Barça Nike Backpack",
+      description: "Men Bags",
+      colors: 1,
+      price: 29.99,
     },
+
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Blazer Mid ‘77",
-      description: "Men Shoes",
-      colors: 3,
-      price: 99.99,
+      name: "Nike Barça black drawstring bag",
+      description: "Backpack (33 L)",
+      colors: 1,
+      price: 22.99,
     },
+
     {
       image: "./images/A_black_image.jpg",
-      name: "Nike Air VaporMax",
-      description: "Men Shoes",
-      colors: 2,
-      price: 199.99,
+      name: "Gift bag",
+      description: "Men Bags",
+      colors: 1,
+      price: 5.99,
     },
+    
     // Ajoute d'autres modèles Nike si nécessaire
   ];
 
