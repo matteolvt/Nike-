@@ -7,7 +7,7 @@ const MenShoes = () => {
   const [filters, setFilters] = useState({
     size: [],
     width: [],
-    activity: [],
+    activities: [],
     color: [],
     model: [],
     price: [],
@@ -16,7 +16,7 @@ const MenShoes = () => {
   const [openFilters, setOpenFilters] = useState({
     size: false,
     width: false,
-    activity: false,
+    activities: false,
     color: false,
     model: false,
     price: false,
@@ -210,7 +210,7 @@ const MenShoes = () => {
                   Trail
                   <input
                     type="checkbox"
-                    onChange={() => handleFilterChange("activities", "Trail")}
+                    onChange={() => handleFilterChange("activities", "trail")}
                   />
                   <span className="checkmark"></span>
                 </label>

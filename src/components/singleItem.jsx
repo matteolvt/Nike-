@@ -2,11 +2,6 @@ import "./css/singleItem.css"
 const SingleItem = () => {
   return (
     <>
-      <div id="cart-panel" className="cart-panel">
-        <button id="close-cart">x</button>
-        <h2>Your Bag</h2>
-        <p>Your bag is empty</p>
-      </div>
       <main>
         <div className="product-container">
           <div className="carousel-wrapper">
