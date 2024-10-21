@@ -22,6 +22,79 @@ const MenShoes = () => {
     price: false,
   });
 
+  const products = [
+    {
+      image: "./images/A_black_image.jpg",
+      name: "Nike Air Force 1 ‘07",
+      description: "Men Shoes",
+      size: 43,
+      width: "wide",
+      activities: ["running"],
+      color: "red",
+      model: "model a",
+      price: 119.99,
+    },
+    {
+      image: "./images/A_black_image.jpg",
+      name: "Nike Air Max",
+      description: "Men Shoes",
+      size: 42,
+      width: "regular",
+      activities: ["running"],
+      color: "blue",
+      model: "model b",
+      price: 119.99,
+    },
+    {
+      image: "./images/A_black_image.jpg",
+      name: "Nike Air Zoom Pegasus",
+      description: "Men Shoes",
+      size: 41,
+      width: "wide",
+      activities: ["running"],
+      color: "red",
+      model: "model a",
+      price: 139.99,
+    },
+    {
+      image: "./images/A_black_image.jpg",
+      name: "Nike React Infinity Run",
+      description: "Men Shoes",
+      size: 40,
+      width: "regular",
+      activities: ["running"],
+      color: "blue",
+      model: "model b",
+      price: 149.99,
+    },
+    {
+      image: "./images/A_black_image.jpg",
+      name: "Nike Blazer Mid ‘77",
+      description: "Men Shoes",
+      size: 39,
+      width: "wide",
+      activities: ["running"],
+      color: "red",
+      model: "model b",
+      price: 99.99,
+    },
+    {
+      image: "./images/A_black_image.jpg",
+      name: "Nike Air VaporMax",
+      description: "Men Shoes",
+      size: 38,
+      width: "regular",
+      activities: ["running"],
+      color: "blue",
+      model: "model a",
+      price: 199.99,
+    },
+  ];
+
+  const shoeSizes = [
+    38, 39, 40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45, 46, 47
+  ];
+
   const handleFilterChange = (category, value) => {
     setFilters((prevFilters) => {
       const isSelected = prevFilters[category].includes(value);
@@ -34,69 +107,64 @@ const MenShoes = () => {
     });
   };
 
-  const toggleFilter = (id) => {
-    // Gestion de l'affichage du contenu du filtre
-    const element = document.getElementById(id);
-    if (element.style.display === "block") {
-      element.style.display = "none";
-    } else {
-      element.style.display = "block";
+  const filteredProducts = products.filter((product) => {
+    // Filtrage par taille
+    if (filters.size.length > 0 && !filters.size.includes(product.size)) {
+      return false;
     }
+
+    // Filtrage par largeur
+    if (filters.width.length > 0 && !filters.width.includes(product.width)) {
+      return false;
+    }
+
+    // Filtrage par activités
+    if (
+      filters.activities.length > 0 &&
+      !filters.activities.some((activity) =>
+        product.activities.includes(activity)
+      )
+    ) {
+      return false;
+    }
+
+    // Filtrage par couleur
+    if (filters.color.length > 0 && !filters.color.includes(product.color)) {
+      return false;
+    }
+
+    // Filtrage par modèle
+    if (filters.model.length > 0 && !filters.model.includes(product.model)) {
+      return false;
+    }
+
+    // Filtrage par prix
+    if (filters.price.length > 0) {
+      const priceFilter = filters.price.map((range) =>
+        range.split("-").map(Number)
+      );
+      const isInPriceRange = priceFilter.some(
+        ([min, max]) => product.price >= min && product.price <= max
+      );
+      if (!isInPriceRange) {
+        return false;
+      }
+    }
+
+    // Si tout est bon, le produit est gardé
+    return true;
+  });
+
+  const toggleFilter = (id) => {
     setOpenFilters((prevOpenFilters) => ({
       ...prevOpenFilters,
-      [id]: !prevOpenFilters[id], // Inverse l'état actuel (ouvert/fermé)
+      [id]: !prevOpenFilters[id],
     }));
   };
 
   useEffect(() => {
     console.log("Filters applied:", filters);
   }, [filters]);
-
-  const products = [
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Air Force 1 ‘07",
-      description: "Men Shoes",
-      colors: 3,
-      price: 119.99,
-    },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Air Max",
-      description: "Men Shoes",
-      colors: 2,
-      price: 129.99,
-    },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Air Zoom Pegasus",
-      description: "Men Shoes",
-      colors: 4,
-      price: 139.99,
-    },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike React Infinity Run",
-      description: "Men Shoes",
-      colors: 3,
-      price: 149.99,
-    },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Blazer Mid ‘77",
-      description: "Men Shoes",
-      colors: 3,
-      price: 99.99,
-    },
-    {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Air VaporMax",
-      description: "Men Shoes",
-      colors: 2,
-      price: 199.99,
-    },
-    // Ajoute d'autres modèles Nike si nécessaire
-  ];
 
   return (
     <>
@@ -115,7 +183,7 @@ const MenShoes = () => {
       <main>
         <div className="main-container">
           <div className="filter-container">
-            {/* Filtres de taille */}
+            {/* Size Filter */}
             <div className="filter">
               <button
                 className="filter-btn"
@@ -127,35 +195,23 @@ const MenShoes = () => {
                 </span>
               </button>
               <hr />
-              <div id="size" className="filter-content">
-                <label className="checkbox-container">
-                  Small
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("size", "small")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Medium
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("size", "medium")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Large
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("size", "large")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
+              <div id="size" className="filter-content" style={{ display: openFilters.size ? "block" : "none" }}>
+                <div className="size-container"> 
+                  {shoeSizes.map((size) => (
+                  <div key={size} className="checkbox-row">
+                    <label className="checkbox-container">
+                      {size}
+                    <input
+                      type="checkbox"
+                      onChange={() => handleFilterChange("size", size)}
+                    />
+                    <span className="checkmark"></span>
+                    </label>
+                  </div>
+                  ))}
+                </div>
               </div>
             </div>
-
-            {/* Répète cette structure pour chaque filtre */}
             <div className="filter">
               <button
                 className="filter-btn"
@@ -167,7 +223,7 @@ const MenShoes = () => {
                 </span>
               </button>
               <hr />
-              <div id="width" className="filter-content">
+              <div id="width" className="filter-content" style={{ display: openFilters.width ? "block" : "none" }}>
                 <label className="checkbox-container">
                   Regular
                   <input
@@ -197,7 +253,7 @@ const MenShoes = () => {
                 </span>
               </button>
               <hr />
-              <div id="activities" className="filter-content">
+              <div id="activities" className="filter-content" style={{ display: openFilters.activities ? "block" : "none" }}>
                 <label className="checkbox-container">
                   Running
                   <input
@@ -227,7 +283,7 @@ const MenShoes = () => {
                 </span>
               </button>
               <hr />
-              <div id="color" className="filter-content">
+              <div id="color" className="filter-content" style={{ display: openFilters.color ? "block" : "none" }}>
                 <label className="checkbox-container">
                   Blue
                   <input
@@ -257,7 +313,7 @@ const MenShoes = () => {
                 </span>
               </button>
               <hr />
-              <div id="model" className="filter-content">
+              <div id="model" className="filter-content" style={{ display: openFilters.model ? "block" : "none" }}>
                 <label className="checkbox-container">
                   Model A
                   <input
@@ -287,7 +343,7 @@ const MenShoes = () => {
                 </span>
               </button>
               <hr />
-              <div id="price" className="filter-content">
+              <div id="price" className="filter-content" style={{ display: openFilters.price ? "block" : "none" }}>
                 <label className="checkbox-container">
                   0-25€
                   <input
@@ -334,18 +390,24 @@ const MenShoes = () => {
 
           {/* Liste des produits */}
           <div className="product-list">
-            {products.map((product) => (
+            {filteredProducts.length === 0 ? (
+            <div className="no-products-message">
+              Sorry, but there are no articles for this filter.
+            </div>
+            ) : (
+            filteredProducts.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
+                key={product.name}
                 image={product.image}
                 name={product.name}
                 description={product.description}
                 colors={product.colors}
                 price={product.price}
               />
-            ))}
+              ))
+              )}
+            </div>
           </div>
-        </div>
       </main>
     </>
   );

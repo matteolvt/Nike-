@@ -7,8 +7,8 @@
 
 /* Container des filtres */
 .filter-container {
-    width: 400px; /* Ajuste cette valeur pour une largeur plus grande */
-    padding: 20px;
+    width: 100%;
+    padding: 10px;
     margin-right: 20px; /* Espace entre les filtres et les produits */
 }
 
@@ -32,26 +32,36 @@
     align-items: center; /* Aligner verticalement le contenu */
 }
 
+.filter-btn span.toggle-icon {
+    margin-left: 10px; /* Ajustez cette valeur pour l'espacement désiré */
+}
+
 .filter-btn .toggle-icon {
     font-size: 20px;
     line-height: 1;
 }
 
 .filter-btn.active .toggle-icon {
-    font-weight: bold; /* Peut-être rendre le "-" plus visible */
+    font-weight: bold;
 }
 
 .filter-content {
     display: none;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 100%; /* Fixe la largeur à 100% du conteneur parent */
+    width: 100%;
 }
 
 .filter-content label {
     display: block;
     margin: 5px 0;
+}
+
+.size-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.size-container .checkbox-row {
+    margin-right: 5px;
 }
 
 .toggle-icon {
@@ -66,6 +76,7 @@
     cursor: pointer;
     font-size: 16px; /* Ajustez la taille du texte si nécessaire */
     user-select: none; /* Empêche la sélection du texte */
+    border: none;
 }
 
 .checkbox-container input {
@@ -112,6 +123,14 @@
     border: solid white; /* Couleur du checkmark */
     border-width: 0 3px 3px 0; /* Forme du checkmark */
     transform: rotate(45deg); /* Rotation pour former le symbole de check */
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0; /* Masque la checkbox originale */
+    cursor: pointer;
+    margin: 0; /* Enlève tout espacement par défaut */
+    border: none; /* Enlève la bordure */
 }
 
 /* Container des produits */
@@ -163,6 +182,13 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+.no-products-message {
+    text-align: center;
+    margin: 20px;
+    font-size: 1.5rem;
+    color: #666;
+  }
 
 @media screen and (max-width: 768px) {
     * {
