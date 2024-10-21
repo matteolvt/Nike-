@@ -24,7 +24,7 @@ const MenShoes = () => {
 
   const products = [
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/fecha-de-lanzamiento-de-las-air-max-plus-x-fc-barcelona-x-patta-culers-del-món-fn8260-001.jpg",
       name: "Air Max Plus Tn Patta FC Barcelona",
       description: "Men Shoes",
       size: 43,
@@ -35,7 +35,7 @@ const MenShoes = () => {
       price: 119.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/air-drift.jpg",
       name: "Nike Air Max Plus Drift",
       description: "Men Shoes",
       size: 42,
@@ -46,8 +46,8 @@ const MenShoes = () => {
       price: 119.99,
     },
     {
-      image: "./images/A_black_image.jpg",
-      name: "Nike Air Zoom Pegasus",
+      image: "./images/NIKE+AIR+PEGASUS+2005.png",
+      name: "Nike Air Zoom Pegasus 2005",
       description: "Men Shoes",
       size: 41,
       width: "wide",
@@ -57,7 +57,7 @@ const MenShoes = () => {
       price: 139.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/NIKE+REACTX+INFINITY+RN+4+GTX.png",
       name: "Nike React Infinity Run",
       description: "Men Shoes",
       size: 40,
@@ -68,7 +68,7 @@ const MenShoes = () => {
       price: 149.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/BLAZER+MID+'77+VNTG.png",
       name: "Nike Blazer Mid ‘77",
       description: "Men Shoes",
       size: 39,
@@ -79,7 +79,7 @@ const MenShoes = () => {
       price: 99.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/AIR+VAPORMAX+2023+FK.png",
       name: "Nike Air VaporMax",
       description: "Men Shoes",
       size: 38,

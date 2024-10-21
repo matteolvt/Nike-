@@ -54,36 +54,36 @@ const WomenBags = () => {
 
   const products = [
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/229589-2001_1.jpg",
       name: "Backpack Barça crest",
-      description: "Women Bags",
+      description: "Bags",
       colors: 1,
       price: 49.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/229588-2001_1.jpg",
       name: "Shoe bag Barça crest",
-      description: "Women Bags",
+      description: "Bags",
       colors: 1,
       price: 29.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/BLMP000816004-1.jpg",
       name: "Backpack FC Barcelona Navy blue",
-      description: "Women Bags",
+      description: "Bags",
       colors: 1,
       price: 79.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/700x1060-DJ9968-410-1.webp",
       name: "Blue Barça Nike Backpack",
-      description: "Women Bags",
+      description: "Bags",
       colors: 1,
       price: 29.99,
     },
 
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/FCB+NK+GMSK+-+SU22.png",
       name: "Nike Barça black drawstring bag",
       description: "Backpack (33 L)",
       colors: 1,
@@ -91,9 +91,9 @@ const WomenBags = () => {
     },
 
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/fcb_capsula_xmas_bossa_01_mid_res_21bac3e6-a22f-4efb-985a-aa84204bfe58.webp",
       name: "Gift bag",
-      description: "Women Bags",
+      description: "Bags",
       colors: 1,
       price: 5.99,
     },

@@ -54,46 +54,46 @@ const WomenClothes = () => {
 
   const products = [
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/FCB+W+NK+DF+STAD+JSY+SS+HM.jpeg",
       name: "UCL Women's home jersey 24/25 FC Barcelona",
       description: "Women Clothing",
       colors: 1,
       price: 99.99,
     },
     {
-      image: "./images/A_black_image.jpg",
-      name: "FC Barcelona home shorts 24/25",
+      image: "./images/FCB+W+NK+TRAVEL+SS+TOP.png",
+      name: "FC Barcelona Travel",
       description: "Women Clothing",
       colors: 1,
       price: 49.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/25100MCW_1_7f14d3e6-1ff2-4cfa-8abc-8f51bf3fe082.webp",
       name: "UCL Women's home jersey 24/25 FC Barcelona - Dri-Fit ADV",
       description: "Women Clothing",
       colors: 1,
       price: 149.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/FCB+W+NK+DF+STRK+SS+TOPK.png",
       name: "FC Barcelona Strike",
       description: "Nike Short Sleeve Mesh Football Top",
       colors: 1,
       price: 49.99,
     },
     {
-      image: "./images/A_black_image.jpg",
+      image: "./images/FCB+W+NK+DF+STRK+SHORT+KZ.png",
       name: "FC Barcelona Strike Elite",
       description: "Nike Dri-FIT ADV Women's Mesh Football Training Top",
       colors: 1,
       price: 129.99,
     },
     {
-      image: "./images/A_black_image.jpg",
-      name: "FC Barcelona Academy Pro Domicile",
-      description: "Nike Dri-FIT Women's National Football Jacket",
+      image: "./images/FCB+W+NK+DFADV+STRK+EL+DRILT+K.png",
+      name: "FC Barcelona Strike Elite",
+      description: "Nike Dri-FIT ADV Knit Knit Training Football Shirt",
       colors: 1,
-      price: 89.99,
+      price: 129.99,
     },
     // Ajoute d'autres modèles Nike si nécessaire
   ];
