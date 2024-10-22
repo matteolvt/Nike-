@@ -233,8 +233,8 @@
 .cart-body {
     padding: 15px;
     font-size: 16px;
-    max-height: 85%;
-    overflow-y: auto;
+    height:10% ;
+    overflow-y: none;
     align-items: center;
 }
 
@@ -263,6 +263,7 @@ h2, h3 {
 
 h3 {
     margin-top: 10px;
+    margin-bottom :30px;    
 }
 
 .clear-cart {
@@ -275,6 +276,7 @@ h3 {
     border-radius: 5px;
     width: 100%;
     font-size: 16px;
+    margin-top:20px; 
 }
 
 .clear-cart:hover {
@@ -296,6 +298,27 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.go-to-cart-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+.go-to-cart-btn:hover {
+    border: 1px solid #A50044;
 }
 
 @media screen and (max-width: 768px) {
