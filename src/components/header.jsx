@@ -130,9 +130,6 @@ const Header = () => {
               </div>
             </>
           )}
-          <Link to="/shoppingBag" className="go-to-cart-btn">
-            Go to Cart
-          </Link>
           <button className="clear-cart" onClick={clearCart}>
             Clear Cart
           </button>
