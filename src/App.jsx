@@ -23,7 +23,6 @@ import KidsBags from "./components/kidsBags";
 import KidsAccessories from "./components/kidsAccessories";
 import SingleItem from "./components/singleItem";
 import { CartProvider } from "./components/cartContext";
-import ShoppingBag from "./components/shoppingBag";
 
 const router = createBrowserRouter([
   {
@@ -119,17 +118,13 @@ const router = createBrowserRouter([
         path: "/single-item",
         element: (<SingleItem />)
       },
-      {
-        path: "/shoppingBag",
-        element: (<ShoppingBag />)
-      }
     ]
   }
 ]);
 
 const App = () => {
   return (
-    <CartProvider>
+    <CartProvider> {/* Enveloppez RouterProvider avec CartProvider */}
       <RouterProvider router={router} />
     </CartProvider>
   );
