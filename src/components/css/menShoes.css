@@ -57,8 +57,9 @@
 
 .size-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
+
 
 .size-container .checkbox-row {
     margin-right: 5px;
@@ -74,9 +75,10 @@
     position: relative;
     padding-left: 30px; /* Espace à gauche pour le checkmark */
     cursor: pointer;
-    font-size: 16px; /* Ajustez la taille du texte si nécessaire */
+    font-size: 0.5em; /* Ajustez la taille du texte si nécessaire */
     user-select: none; /* Empêche la sélection du texte */
     border: none;
+    width: 50%;
 }
 
 .checkbox-container input {

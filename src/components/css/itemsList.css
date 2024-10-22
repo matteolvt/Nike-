@@ -26,6 +26,7 @@
     color: #000;
     text-decoration: none;
     font-size: 1.5em;
+    margin-left:50px;
 }
 
 .shoes-items {
@@ -35,24 +36,25 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-left:100px; 
 }
 
-.shoes-item1 {
-    height: 100%;
-    width: 33%;
-    background-color: #000;
-}
-
-.shoes-item2 {
-    height: 100%;
-    width: 33%;
-    background-color: #000;
-}
-
+.shoes-item1,
+.shoes-item2,
 .shoes-item3 {
+    display: flex;
     height: 100%;
     width: 33%;
-    background-color: #000;
+   
+}
+
+.shoes-item1 img,
+.shoes-item2 img,
+.shoes-item3 img {
+    width: 410px;
+    height: 499px;
+    margin-bottom: 100px;
+
 }
 
 .clothes {
@@ -62,6 +64,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top:175px; 
 }
 
 .clothes-title {
@@ -74,6 +77,7 @@
     color: #000;
     text-decoration: none;
     font-size: 1.5em;
+    margin-left:50px; 
 }
 
 .clothes-items {
@@ -83,24 +87,23 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-left:100px; 
 }
 
-.clothes-item1 {
-    height: 100%;
-    width: 33%;
-    background-color: #000;
-}
-
-.clothes-item2 {
-    height: 100%;
-    width: 33%;
-    background-color: #000;
-}
-
+.clothes-item1,
+.clothes-item2,
 .clothes-item3 {
     height: 100%;
     width: 33%;
-    background-color: #000;
+    
+}
+
+.clothes-item1 img,
+.clothes-item2 img,
+.clothes-item3 img {
+    width: 410px;
+    height: 499px;
+    margin-bottom: 100px;
 }
 
 .news {
@@ -110,6 +113,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top:200px; 
 }
 
 .news-title {
@@ -119,11 +123,6 @@
     justify-content: center;
 }
 
-.news-title a {
-    font-family: Vercetti, sans-serif;
-    color: #000;
-    font-size: 1.5em;
-}
 
 .news-items {
     height: 75%;
@@ -134,20 +133,3 @@
     align-items: center;
 }
 
-.news-item1 {
-    height: 100%;
-    width: 30%;
-    background-color: #000;
-}
-
-.news-item2 {
-    height: 100%;
-    width: 30%;
-    background-color: #000;
-}
-
-.news-item3 {
-    height: 100%;
-    width: 30%;
-    background-color: #000;
-}
