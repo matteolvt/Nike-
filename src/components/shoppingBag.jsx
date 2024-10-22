@@ -20,7 +20,7 @@ const CartPage = () => {
           <>
             {cartItems.map((item, index) => (
               <div className="cart-item" key={index}>
-                <img src={item.image} alt={item.name} className="product-image-bag" />
+                <img src={item.image} alt={item.name} className="product-image" />
                 <div className="item-details">
                   <h3>{item.name}</h3>
                   <p>Size: {item.size}</p>
