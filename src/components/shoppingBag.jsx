@@ -6,6 +6,10 @@ import './css/shoppingBag.css';
 const CartPage = () => {
   const { cartItems, clearCart, removeFromCart, updateQuantity } = useCart();
 
+  const TAX_RATE = 0.2;
+  const calculateTax = () => (calculateTotalPrice() * TAX_RATE).toFixed(2);
+  const calculateFinalTotal = () => (parseFloat(calculateTotalPrice()) + parseFloat(calculateTax())).toFixed(2);
+
   const calculateTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
@@ -15,7 +19,7 @@ const CartPage = () => {
       <div className="cart-section">
         <h1>Bag</h1>
         {cartItems.length === 0 ? (
-          <p>Your cart is empty. <Link to="/products">Go shopping!</Link></p>
+          <p className='marge'>Your cart is empty. <Link to="/products" className="vide">Go shopping!</Link></p>
         ) : (
           <>
             {cartItems.map((item, index) => (
@@ -27,12 +31,17 @@ const CartPage = () => {
                   <p>Color: {item.color}</p>
                   <p>Price: {item.price}€</p>
                   <div className="quantity-controls">
-                    <button onClick={() => updateQuantity(item.id, -1)}>-</button>
+                    {item.quantity === 1 ? (
+                    // Si la quantité est 1, on montre un bouton "🗑️" pour supprimer l'article
+                    <button onClick={() => removeFromCart(item.id, item.size, item.color)}>🗑️</button>
+                    ) : (
+                    // Sinon, on montre le bouton "-" pour réduire la quantité
+                    <button onClick={() => updateQuantity(item.id, item.size, item.color, -1)}>-</button>
+                    )}
                     <span>{item.quantity}</span>
-                    <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+                    <button onClick={() => updateQuantity(item.id, item.size, item.color, 1)}>+</button>
                   </div>
                 </div>
-                <button className="delete-item" onClick={() => removeFromCart(item.id)}>🗑️</button>
               </div>
             ))}
             <div className="shipping-details">
@@ -55,11 +64,11 @@ const CartPage = () => {
           </div>
           <div className="summary-row">
             <p>Estimated Tax</p>
-            <p>--</p>
+            <p>{calculateTax()}€</p>
           </div>
           <div className="summary-total">
             <p>Total</p>
-            <p>{calculateTotalPrice()}€</p>
+            <p>{calculateFinalTotal()}€</p>
           </div>
         </div>
         <div className="checkout-section">

@@ -2,17 +2,18 @@
 import { Link } from "react-router-dom";
 import "./css/header.css";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useCart } from './cartContext';
+import { useCart } from './cartContext'; // Assurez-vous d'importer le contexte
 import { useState } from "react";
 
 const Header = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const { cartItems, clearCart } = useCart(); // Récupérez les éléments du panier
+  const { cartItems, clearCart, removeFromCart } = useCart(); // Ajoutez removeFromCart ici
+  const totalItemCount = cartItems.reduce((count, item) => count + item.quantity, 0); // Compteur total d'articles
 
   // Fonction pour calculer le prix total
   const calculateTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
 
   return (
@@ -42,9 +43,9 @@ const Header = () => {
           <span className="material-icons-outlined">search</span>
           <span className="material-icons-outlined" onClick={() => setIsCartOpen(!isCartOpen)}>
             shopping_bag
-            {/* Compteur d'articles */}
-            {cartItems.length > 0 && (
-              <span className="cart-count">{cartItems.length}</span>
+            {/* Affichage du compteur de quantité total */}
+            {totalItemCount > 0 && (
+              <span className="cart-count">{totalItemCount}</span>
             )}
           </span>
           <span className="material-symbols-outlined">person</span>
@@ -87,13 +88,14 @@ const Header = () => {
             </button>
           </div>
           <div className="icons">
-          <span className="material-icons-outlined">favorite_border</span>
-          <span className="material-icons-outlined" onClick={() => setIsCartOpen(!isCartOpen)}>
-            shopping_bag
-            {cartItems.length > 0 && (
-          <span className="cart-count">{cartItems.length}</span>
-          )}
-          </span>
+            <span className="material-icons-outlined">favorite_border</span>
+            <span className="material-icons-outlined" onClick={() => setIsCartOpen(!isCartOpen)}>
+              shopping_bag
+              {/* Affichage du compteur dans la section de la Navbar */}
+              {totalItemCount > 0 && (
+                <span className="cart-count">{totalItemCount}</span>
+              )}
+            </span>
           </div>
         </div>
       </section>
@@ -122,6 +124,16 @@ const Header = () => {
                     <p>Size: {item.size}</p>
                     <p>Color: {item.color}</p>
                     <p>Price: {item.price}€</p>
+                    <p>Quantity: {item.quantity}</p>
+                    <span
+                      className="material-icons-outlined remove-icon"
+                      onClick={() => {
+                        console.log(`Removing item with id: ${item.id}`); // Pour déboguer
+                        removeFromCart(item.id, item.size, item.color); // Appelle la fonction de suppression
+                      }}
+                    >
+                      delete
+                    </span>
                   </div>
                 </div>
               ))}
@@ -130,7 +142,7 @@ const Header = () => {
               </div>
             </>
           )}
-          <Link to="/shoppingBag" className="go-to-cart-btn">
+          <Link to="/shoppingBag" className="go-to-cart-btn" onClick={() => setIsCartOpen(false)}>
             Go to Cart
           </Link>
           <button className="clear-cart" onClick={clearCart}>

@@ -1,50 +1,92 @@
-// src/cartContext.js
-import { createContext, useState, useContext } from "react";
+import React, { createContext, useContext, useReducer } from 'react';
 
 const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
 
-    // Fonction pour ajouter un article au panier
-    const addToCart = (item) => {
-        setCartItems((prevItems) => {
-            const existingItem = prevItems.find((i) => i.id === item.id);
-            if (existingItem) {
-                return prevItems.map((i) =>
-                    i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
-                );
-            }
-            return [...prevItems, { ...item, quantity: 1 }];
-        });
-    };
+export const useCart = () => useContext(CartContext);
 
-    // Fonction pour vider le panier
-    const clearCart = () => {
-        setCartItems([]);
-    };
+const cartReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TO_CART':
+      // Vérifier l'article existant par ID, taille et couleur
+      const existingItemIndex = state.cartItems.findIndex(
+        (item) =>
+          item.id === action.payload.id && // Vérifie que c'est le même produit
+          item.size === action.payload.size && // Vérifie la taille
+          item.color === action.payload.color // Vérifie la couleur
+      );
 
-    // Fonction pour supprimer un article du panier
-    const removeFromCart = (id) => {
-        setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-    };
-
-    // Fonction pour mettre à jour la quantité d'un article
-    const updateQuantity = (id, quantity) => {
-        setCartItems((prevItems) =>
-            prevItems.map((item) =>
-                item.id === id ? { ...item, quantity: Math.max(1, item.quantity + quantity) } : item
-            )
+      if (existingItemIndex >= 0) {
+        // Si l'article avec la même taille et couleur existe, on met à jour la quantité
+        const updatedCartItems = state.cartItems.map((item, index) =>
+          index === existingItemIndex
+            ? { ...item, quantity: item.quantity + action.payload.quantity }
+            : item
         );
-    };
+        return { ...state, cartItems: updatedCartItems };
+      } else {
+        // Sinon, on ajoute l'article comme nouveau
+        return {
+          ...state,
+          cartItems: [...state.cartItems, action.payload],
+        };
+      }
 
-    return (
-        <CartContext.Provider value={{ cartItems, addToCart, clearCart, removeFromCart, updateQuantity }}>
-            {children}
-        </CartContext.Provider>
-    );
+      case 'REMOVE_FROM_CART':
+        return {
+          ...state,
+          cartItems: state.cartItems.filter((item) => 
+            !(item.id === action.payload.id && item.size === action.payload.size && item.color === action.payload.color)
+          ),
+        };
+
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        cartItems: [],
+      };
+
+      case 'UPDATE_QUANTITY': {
+        const { id, size, color, delta } = action.payload;
+        return {
+          ...state,
+          cartItems: state.cartItems.map((item) => {
+            if (item.id === id && item.size === size && item.color === color) {
+              const newQuantity = item.quantity + delta;
+              return { ...item, quantity: newQuantity > 0 ? newQuantity : item.quantity }; // Quantité ne peut pas être négative
+            }
+            return item;
+          }),
+        };
+      }
+
+    default:
+      return state;
+  }
 };
 
-export const useCart = () => {
-    return useContext(CartContext);
+export const CartProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(cartReducer, { cartItems: [] });
+
+  const addToCart = (item) => {
+    dispatch({ type: 'ADD_TO_CART', payload: item });
+  };
+
+  const removeFromCart = (id, size, color) => {
+    dispatch({ type: 'REMOVE_FROM_CART', payload: { id, size, color } });
+  };
+
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART' });
+  };
+
+  const updateQuantity = (id, size, color, delta) => {
+    dispatch({ type: 'UPDATE_QUANTITY', payload: { id, size, color, delta } });
+  };
+
+  return (
+    <CartContext.Provider value={{ cartItems: state.cartItems, addToCart, removeFromCart, clearCart, updateQuantity }}>
+      {children}
+    </CartContext.Provider>
+  );
 };

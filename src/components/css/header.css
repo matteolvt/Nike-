@@ -205,8 +205,14 @@
     background-color: white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: right 0.3s ease;
-    overflow: hidden;
     z-index: 1000;
+    overflow-y: auto;
+}
+
+.remove-icon {
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
 }
 
 .cart.open {

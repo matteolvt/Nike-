@@ -20,6 +20,7 @@ const SingleItem = () => {
       size: selectedSize,
       color: selectedColor,
       image: "./images/NIKE+DUNK+LOW.png",
+      quantity: 1,
     };
 
     addToCart(newItem); // Ajouter l'article au panier via le contexte
