@@ -41,8 +41,9 @@
   }
   
   .carousel-item img {
-    width: 100%;
+    width: 130%;
     height: 100%;
+    padding-bottom: 40px; 
   }
   
   .thumbnails {
@@ -215,6 +216,7 @@
     max-width: 1200px; /* Largeur maximale (ajuste selon tes besoins) */
     margin: 0 auto; /* Centrer le conteneur dans la page */
     align-items: flex-start; /* Aligner les éléments au début (en haut) */
+    margin-top: 100px; 
   }
   
   #fav {
