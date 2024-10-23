@@ -24,6 +24,7 @@ const MenShoes = () => {
 
   const products = [
     {
+      id: 1,
       image: "./images/fecha-de-lanzamiento-de-las-air-max-plus-x-fc-barcelona-x-patta-culers-del-món-fn8260-001.jpg",
       name: "Air Max Plus Tn Patta FC Barcelona",
       description: "Men Shoes",
@@ -35,6 +36,7 @@ const MenShoes = () => {
       price: 119.99,
     },
     {
+      id: 2,
       image: "./images/air-drift.jpg",
       name: "Nike Air Max Plus Drift",
       description: "Men Shoes",
@@ -46,6 +48,7 @@ const MenShoes = () => {
       price: 119.99,
     },
     {
+      id: 3,
       image: "./images/NIKE+AIR+PEGASUS+2005.png",
       name: "Nike Air Zoom Pegasus 2005",
       description: "Men Shoes",
@@ -57,6 +60,7 @@ const MenShoes = () => {
       price: 139.99,
     },
     {
+      id: 4,
       image: "./images/NIKE+REACTX+INFINITY+RN+4+GTX.png",
       name: "Nike React Infinity Run",
       description: "Men Shoes",
@@ -68,6 +72,7 @@ const MenShoes = () => {
       price: 149.99,
     },
     {
+      id: 5,
       image: "./images/BLAZER+MID+'77+VNTG.png",
       name: "Nike Blazer Mid ‘77",
       description: "Men Shoes",
@@ -79,6 +84,7 @@ const MenShoes = () => {
       price: 99.99,
     },
     {
+      id: 6,
       image: "./images/AIR+VAPORMAX+2023+FK.png",
       name: "Nike Air VaporMax",
       description: "Men Shoes",
@@ -397,12 +403,14 @@ const MenShoes = () => {
             ) : (
             filteredProducts.map((product) => (
               <ProductCard
-                key={product.name}
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
               ))
               )}

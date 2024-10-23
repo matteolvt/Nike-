@@ -27,7 +27,7 @@ import ShoppingBag from "./components/shoppingBag";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
@@ -37,99 +37,101 @@ const router = createBrowserRouter([
             <MySwiper />
             <ItemsList />
           </>
-        )
+        ),
       },
       {
         path: "/help",
-        element: (<Help />)
+        element: <Help />,
       },
       {
         path: "/men",
-        element: (<ProductMen />)
+        element: <ProductMen />,
       },
       {
         path: "/join-us",
-        element: (<JoinUs />)
+        element: <JoinUs />,
       },
       {
         path: "/sign-in",
-        element: (<SignIn />)
+        element: <SignIn />,
       },
       {
         path: "/products",
-        element: (<Products />)
+        element: <Products />,
       },
       {
         path: "/men-shoes",
-        element: (<MenShoes />)
+        element: <MenShoes />,
       },
       {
         path: "/men-clothes",
-        element: (<MenClothes />)
+        element: <MenClothes />,
       },
       {
         path: "/men-bags",
-        element: (<MenBags />)
+        element: <MenBags />,
       },
       {
         path: "/men-accessories",
-        element: (<MenAccessories />)
+        element: <MenAccessories />,
       },
       {
         path: "/women",
-        element: (<ProductWomen />)
+        element: <ProductWomen />,
       },
       {
         path: "/women-shoes",
-        element: (<WomenShoes />)
+        element: <WomenShoes />,
       },
       {
         path: "/women-clothes",
-        element: (<WomenClothes />)
+        element: <WomenClothes />,
       },
       {
         path: "/women-bags",
-        element: (<WomenBags />)
+        element: <WomenBags />,
       },
       {
         path: "/women-accessories",
-        element: (<WomenAccessories />)
+        element: <WomenAccessories />,
       },
       {
         path: "/kids",
-        element: (<ProductKids />)
+        element: <ProductKids />,
       },
       {
         path: "/kids-shoes",
-        element: (<KidsShoes />)
+        element: <KidsShoes />,
       },
       {
         path: "/kids-clothes",
-        element: (<KidsClothes />)
+        element: <KidsClothes />,
       },
       {
         path: "/kids-bags",
-        element: (<KidsBags />)
+        element: <KidsBags />,
       },
       {
         path: "/kids-accessories",
-        element: (<KidsAccessories />)
+        element: <KidsAccessories />,
       },
       {
-        path: "/single-item",
-        element: (<SingleItem />)
+        path: "/single-item/:id",
+        element: <SingleItem />,
       },
       {
         path: "/shoppingBag",
-        element: (<ShoppingBag />)
-      }
-    ]
-  }
+        element: <ShoppingBag />,
+      },
+    ],
+  },
 ]);
 
 const App = () => {
   return (
     <CartProvider>
+      {" "}
+      {/* Enveloppez RouterProvider avec CartProvider */}
       <RouterProvider router={router} />
     </CartProvider>
   );

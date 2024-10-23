@@ -54,9 +54,11 @@ const KidsShoes = () => {
 
   const products = [
     {
-      image: "./images/VOMERO+5+(GS).png",
+      id: 37,
+      category: "shoes",
+      image: "/images/VOMERO+5+(GS).png",
       name: "Nike Vomero 5",
-      description: "Men Shoes",
+      description: "Kids Shoes",
       size: 43,
       width: "wide",
       activities: ["running"],
@@ -65,7 +67,9 @@ const KidsShoes = () => {
       price: 109.99,
     },
     {
-      image: "./images/NIKE+DUNK+LOW+(GS).png",
+      id: 38,
+      category: "shoes",
+      image: "/images/NIKE+DUNK+LOW+(GS).png",
       name: "Nike Dunk Low",
       description: "Kids Shoes",
       size: 42,
@@ -76,7 +80,9 @@ const KidsShoes = () => {
       price: 99.99,
     },
     {
-      image: "./images/AIR+JORDAN+1+RETRO+LOW+OG+(GS).png",
+      id: 39,
+      category: "shoes",
+      image: "/images/AIR+JORDAN+1+RETRO+LOW+OG+(GS).png",
       name: "Air Jordan 1 Low OG (Mocha)",
       description: "Kids Shoes",
       size: 41,
@@ -87,7 +93,9 @@ const KidsShoes = () => {
       price: 119.99,
     },
     {
-      image: "./images/JR+ZOOM+SUPERFLY+10+ACAD+FGMG.png",
+      id: 40,
+      category: "shoes",
+      image: "/images/JR+ZOOM+SUPERFLY+10+ACAD+FGMG.png",
       name: "Nike Jr. Mercurial Superfly 10 Academy",
       description: "Kids Shoes",
       size: 40,
@@ -98,7 +106,9 @@ const KidsShoes = () => {
       price: 74.99,
     },
     {
-      image: "./images/JR+ZM+VAPOR+16+PRO+FG.png",
+      id: 41,
+      category: "shoes",
+      image: "/images/JR+ZM+VAPOR+16+PRO+FG.png",
       name: "Nike Jr. Mercurial Vapor 16 Pro",
       description: "Kids Shoes",
       size: 39,
@@ -109,7 +119,9 @@ const KidsShoes = () => {
       price: 139.99,
     },
     {
-      image: "./images/JR+PHANTOM+GX+II+ACADEMY+FG_MG.png",
+      id: 42,
+      category: "shoes",
+      image: "/images/JR+PHANTOM+GX+II+ACADEMY+FG_MG.png",
       name: "Nike Jr. Phantom GX 2 Academy",
       description: "Kids Shoes",
       size: 38,
@@ -360,12 +372,14 @@ const KidsShoes = () => {
           <div className="product-list">
             {products.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
             ))}
           </div>

@@ -54,42 +54,54 @@ const KidsClothes = () => {
 
   const products = [
     {
-      image: "./images/b1e72ee6_830e_41fd_8fe1_93f30b813f8e.webp",
+      id: 43,
+      category: "clothes",
+      image: "/images/b1e72ee6_830e_41fd_8fe1_93f30b813f8e.webp",
       name: "FC Barcelona 2024/25 Stadium 3rd Kit",
       description: "Older Kids' Nike Dri-FIT Football Replica Shirt",
       colors: 1,
       price: 79.99,
     },
     {
-      image: "./images/FCB+Y+NK+DF+SHORT+STAD+3R.png",
+      id: 44,
+      category: "clothes",
+      image: "/images/FCB+Y+NK+DF+SHORT+STAD+3R.png",
       name: "FC Barcelona 2024/25 Stadium 3rd Kit",
       description: "Replica Nike Dri-FIT Football Shorts - Boy / Girl",
       colors: 2,
       price: 39.99,
     },
     {
-      image: "./images/FCB+LK+NK+DF+KIT+STAD+3R.png",
+      id: 45,
+      category: "clothes",
+      image: "/images/FCB+LK+NK+DF+KIT+STAD+3R.png",
       name: "FC Barcelona 2024/25 Stadium 3rd Kit",
       description: "Nike Football Replica Three-Piece Kit - Toddler",
       colors: 1,
       price: 69.99,
     },
     {
-      image: "./images/FCB+Y+NK+DF+JSY+SS+STAD+HM.jpeg",
+      id: 46,
+      category: "clothes",
+      image: "/images/FCB+Y+NK+DF+JSY+SS+STAD+HM.jpeg",
       name: "FC Barcelona Strike 3rd Kit",
       description: "Nike Dri-FIT Replica Football Shirt - Boy / Girl",
       colors: 1,
       price: 79.99,
     },
     {
-      image: "./images/FCB+YNK+DF+ACDPR+SS+TOP+K+AWPM.png",
+      id: 47,
+      category: "clothes",
+      image: "/images/FCB+YNK+DF+ACDPR+SS+TOP+K+AWPM.png",
       name: "FC Barcelona Academy Pro",
       description: "Nike Dri-FIT Youth Soccer Training Top",
       colors: 1,
       price: 59.99,
     },
     {
-      image: "./images/FCB+YNK+DF+STRK+DRILL+TOP+K.jpeg",
+      id: 48,
+      category: "clothes",
+      image: "/images/FCB+YNK+DF+STRK+DRILL+TOP+K.jpeg",
       name: "FC Barcelona Strike Third",
       description: "Nike Dri-FIT Training Football Shirt - Boy/Girl",
       colors: 1,
@@ -336,12 +348,14 @@ const KidsClothes = () => {
           <div className="product-list">
             {products.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
             ))}
           </div>

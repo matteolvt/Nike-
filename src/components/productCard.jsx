@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import "./css/productCard.css"
+import "./css/productCard.css";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ image, name, description, colors, price }) => {
+const ProductCard = ({ id, image, name, description, colors, price }) => {
   return (
     <div className="container">
-      <Link to="/single-item" className="product-link">
+      <Link to={`/single-item/${id}`} className="product-link">
         <img src={image} alt={name} className="product-image" />
         <div className="product-info">
           <h3>{name}</h3>
@@ -19,3 +19,4 @@ const ProductCard = ({ image, name, description, colors, price }) => {
 };
 
 export default ProductCard;
+

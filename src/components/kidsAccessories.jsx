@@ -54,28 +54,40 @@ const KidsAccessories = () => {
 
   const products = [
     {
-      image: "./images/700x1060-73899-1.webp",
+      id: 49,
+      category: "accessories",
+      subCategory: "socks",
+      image: "/images/700x1060-73899-1.webp",
       name: "Home Kit socks – Junior",
       description: "Men Shoes",
       colors: 1,
       price: 13.99,
     },
     {
-      image: "./images/unnamed_9c556ba3-cb66-4766-be8a-95ef31f748d9.webp",
+      id: 50,
+      category: "accessories",
+      subCategory: "socks",
+      image: "/images/unnamed_9c556ba3-cb66-4766-be8a-95ef31f748d9.webp",
       name: "FC Barcelona Socks - Boys",
       description: "Men Shoes",
       colors: 1,
       price: 13.99,
     },
     {
-      image: "./images/FCB+K+NK+DF+CLUB+CAP+US+CB+LR.jpeg",
+      id: 51,
+      category: "accessories",
+      subCategory: "hat",
+      image: "/images/FCB+K+NK+DF+CLUB+CAP+US+CB+LR.jpeg",
       name: "FC Barcelone Dri-FIT Club",
       description: "Nike Football Soft Cap for Teens",
       colors: 2,
       price: 22.99,
     },
     {
-      image: "./images/unnamed_f6098039-e0e0-42a4-b9e2-729d9c757740.webp",
+      id: 52,
+      category: "accessories",
+      subCategory: "hat",
+      image: "/images/unnamed_f6098039-e0e0-42a4-b9e2-729d9c757740.webp",
       name: "FC Barcelona Academy",
       description: "Nike Therma-FIT Kids' Football Gloves",
       colors: 1,
@@ -323,12 +335,14 @@ const KidsAccessories = () => {
           <div className="product-list">
             {products.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
             ))}
           </div>

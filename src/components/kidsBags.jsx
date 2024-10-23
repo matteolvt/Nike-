@@ -54,44 +54,50 @@ const KidsBags = () => {
 
   const products = [
     {
-      image: "./images/229589-2001_1.jpg",
+      id: 13,
+      image: "/images/229589-2001_1.jpg",
       name: "Backpack Barça crest",
       description: "Bags",
       colors: 1,
       price: 49.99,
     },
     {
-      image: "./images/229588-2001_1.jpg",
+      id: 14,
+      image: "/images/229588-2001_1.jpg",
       name: "Shoe bag Barça crest",
       description: "Bags",
       colors: 1,
       price: 29.99,
     },
     {
-      image: "./images/BLMP000816004-1.jpg",
+      id: 15,
+      image: "/images/BLMP000816004-1.jpg",
       name: "Backpack FC Barcelona Navy blue",
       description: "Bags",
       colors: 1,
       price: 79.99,
     },
     {
-      image: "./images/700x1060-DJ9968-410-1.webp",
+      id: 16,
+      image: "/images/700x1060-DJ9968-410-1.webp",
       name: "Blue Barça Nike Backpack",
       description: "Bags",
       colors: 1,
       price: 29.99,
     },
-
+  
     {
-      image: "./images/FCB+NK+GMSK+-+SU22.png",
+      id: 17,
+      image: "/images/FCB+NK+GMSK+-+SU22.png",
       name: "Nike Barça black drawstring bag",
       description: "Backpack (33 L)",
       colors: 1,
       price: 22.99,
     },
-
+  
     {
-      image: "./images/fcb_capsula_xmas_bossa_01_mid_res_21bac3e6-a22f-4efb-985a-aa84204bfe58.webp",
+      id: 18,
+      image: "/images/fcb_capsula_xmas_bossa_01_mid_res_21bac3e6-a22f-4efb-985a-aa84204bfe58.webp",
       name: "Gift bag",
       description: "Bags",
       colors: 1,
@@ -338,12 +344,14 @@ const KidsBags = () => {
           <div className="product-list">
             {products.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
             ))}
           </div>

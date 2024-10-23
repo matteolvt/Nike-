@@ -54,42 +54,54 @@ const WomenShoes = () => {
 
   const products = [
     {
-      image: "./images/W+AIR+FORCE+1+'07+FLYEASE.png",
+      id: 25,
+      category: "shoes",
+      image: "/images/W+AIR+FORCE+1+'07+FLYEASE.png",
       name: "Nike Air Force 1 ‘07",
       description: "Women Shoes",
       colors: 3,
       price: 119.99,
     },
     {
-      image: "./images/custom-nike-air-max-95-by-you.png",
+      id: 26,
+      category: "shoes",
+      image: "/images/custom-nike-air-max-95-by-you.png",
       name: "Nike Air Max",
       description: "Women Shoes",
       colors: 2,
       price: 129.99,
     },
     {
-      image: "./images/W+NIKE+AIR+PEGASUS+2005.png",
+      id: 27,
+      category: "shoes",
+      image: "/images/W+NIKE+AIR+PEGASUS+2005.png",
       name: "Nike Air Zoom Pegasus 2005",
       description: "Women Shoes",
       colors: 4,
       price: 139.99,
     },
     {
-      image: "./images/NIKE+REACTX+INFINITY+RUN+4+W.png",
+      id: 28,
+      category: "shoes",
+      image: "/images/NIKE+REACTX+INFINITY+RUN+4+W.png",
       name: "Nike React Infinity Run",
       description: "Women Shoes",
       colors: 3,
       price: 149.99,
     },
     {
-      image: "./images/W+BLAZER+MID+'77.png",
+      id: 29,
+      category: "shoes",
+      image: "/images/W+BLAZER+MID+'77.png",
       name: "Nike Blazer Mid ‘77",
       description: "Women Shoes",
       colors: 3,
       price: 99.99,
     },
     {
-      image: "./images/W+AIR+VAPORMAX+2023+FK.png",
+      id: 30,
+      category: "shoes",
+      image: "/images/W+AIR+VAPORMAX+2023+FK.png",
       name: "Nike Air VaporMax",
       description: "Women Shoes",
       colors: 2,
@@ -336,12 +348,14 @@ const WomenShoes = () => {
           <div className="product-list">
             {products.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
             ))}
           </div>

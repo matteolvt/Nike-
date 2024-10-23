@@ -54,42 +54,53 @@ const MenClothes = () => {
 
   const products = [
     {
-      image: "./images/FCB+M+NK+DF+JSY+SS+STAD+HM.png",
+      id: 7,
+      category: "clothes",
+      image: "/images/FCB+M+NK+DF+JSY+SS+STAD+HM.png",
       name: "FC Barcelona Stadium Home 2024/25",
       description: "Dri-FIT replica football jersey for men",
-      colors: 2,
       price: 99.99,
     },
     {
-      image: "./images/FCB+MNK+DF+STRK+SS+TOP+K.png",
+      id: 8,
+      category: "clothes",
+      image: "/images/FCB+MNK+DF+STRK+SS+TOP+K.png",
       name: "FC Barcelona Strike",
       description: "Short Sleeve Mesh Football Top Nike Dri-FIT for men",
       colors: 1,
       price: 49.99,
     },
     {
-      image: "./images/FCB+MNK+DF+ACDPR+SS+TOPK+HM+PM.png",
+      id: 9,
+      category: "clothes",
+      image: "/images/FCB+MNK+DF+ACDPR+SS+TOPK+HM+PM.png",
       name: "FC Barcelona Academy Pro Home",
       description: "Pre-Match Short Sleeve Football Top",
       colors: 1,
       price: 64.99,
     },
     {
-      image: "./images/FCB+M+NSW+CLUB+CREW+FT+HM.png",
+      id: 10,
+      category: "clothes",
+      image: "/images/FCB+M+NSW+CLUB+CREW+FT+HM.png",
       name: "FC Barcelona Club Home",
       description: "Nike Football Men's Crewneck Sweatshirt",
       colors: 1,
       price: 64.99,
     },
     {
-      image: "./images/FCB+M+NSW+CLUB+JGGR+FT+HM.png",
+      id: 11,
+      category: "clothes",
+      image: "/images/FCB+M+NSW+CLUB+JGGR+FT+HM.png",
       name: "FC Barcelona Club local",
       description: "Nike Men's French Terry Football Joggers",
       colors: 1,
       price: 64.99,
     },
     {
-      image: "./images/FCB+M+NSW+CLUB+HDY+FZ+FT+3R+GX.jpeg",
+      id: 12,
+      category: "clothes",
+      image: "/images/FCB+M+NSW+CLUB+HDY+FZ+FT+3R+GX.jpeg",
       name: "FC Barcelona Club Third",
       description: "Nike men's French Terry full-zip soccer beanie sweatshirt",
       colors: 1,
@@ -336,12 +347,14 @@ const MenClothes = () => {
           <div className="product-list">
             {products.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
             ))}
           </div>

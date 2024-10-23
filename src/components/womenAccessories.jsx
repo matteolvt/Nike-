@@ -54,6 +54,7 @@ const WomenAccessories = () => {
 
   const products = [
     {
+      id: 19,
       image: "./images/FCB+U+NK+STRIKE+KH+HAa.jpeg",
       name: "FC Barcelona Strike Home",
       description: "High football socks",
@@ -61,6 +62,7 @@ const WomenAccessories = () => {
       price: 17.99,
     },
     {
+      id: 20,
       image: "./images/FCB+U+NK+STRIKE+KH+HA.png",
       name: "FC Barcelona Strike Home/Away",
       description: "Nike Dri-FIT High Football Socks",
@@ -68,13 +70,15 @@ const WomenAccessories = () => {
       price: 19.99,
     },
     {
+      id: 21,
       image: "./images/FCB+K+NK+DF+CLUB+CAP+US+CB+L.png",
       name: "FC Barcelone Dri-FIT Club",
-      description: "Nike Football Soft Cap for Teens",
+      description: "Nike Football Soft Cap",
       colors: 2,
       price: 22.99,
     },
     {
+      id: 22,
       image: "./images/FCB+U+NK+STRIKE+KH+3R.jpeg",
       name: "FC Barcelona 2024/25 Strike 3rd kit",
       description: "Nike Football High Socks",
@@ -82,6 +86,7 @@ const WomenAccessories = () => {
       price: 19.99,
     },
     {
+      id: 23,
       image: "./images/BLM3BFS_1.webp",
       name: "Reversible hat crest Barça",
       description: "Accesories",
@@ -89,6 +94,7 @@ const WomenAccessories = () => {
       price: 34.99,
     },
     {
+      id: 24,
       image: "./images/700x1060-BLM3GBLG-2.webp",
       name: "FC Barcelona cap with crest and anthem lyrics",
       description: "Accessories",
@@ -336,12 +342,14 @@ const WomenAccessories = () => {
           <div className="product-list">
             {products.map((product) => (
               <ProductCard
-                key={product.name} // Utilise un identifiant unique pour chaque produit
-                image={product.image}
-                name={product.name}
-                description={product.description}
-                colors={product.colors}
-                price={product.price}
+              key={product.name}
+              id={product.id} 
+              image={product.image}
+              name={product.name}
+              description={product.description}
+              colors={product.colors}
+              price={product.price}
+              product={product} 
               />
             ))}
           </div>

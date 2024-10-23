@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // src/CartPage.js
 import { useCart } from './cartContext';
 import { Link } from 'react-router-dom';
