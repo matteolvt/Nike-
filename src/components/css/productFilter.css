@@ -1,0 +1,121 @@
+.filter {
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    width: 100%; /* Fixe la largeur à 100% du conteneur parent */
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative; /* Nécessaire pour positionner l'icône */
+    padding-right: 20px;
+    display: flex; /* Utilise flexbox pour aligner le texte et l'icône sur la même ligne */
+    justify-content: space-between; /* Espace entre le texte et l'icône */
+    align-items: center; /* Aligner verticalement le contenu */
+}
+
+.filter-btn span.toggle-icon {
+    margin-left: 10px; /* Ajustez cette valeur pour l'espacement désiré */
+}
+
+.filter-btn .toggle-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.filter-btn.active .toggle-icon {
+    font-weight: bold;
+}
+
+.filter-content {
+    display: none;
+    width: 100%;
+}
+
+.filter-content label {
+    display: block;
+    margin: 5px 0;
+}
+
+.size-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.size-container .checkbox-row {
+    margin-right: 5px;
+}
+
+.toggle-icon {
+    display: inline;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px; /* Espace à gauche pour le checkmark */
+    cursor: pointer;
+    font-size: 0.5em; /* Ajustez la taille du texte si nécessaire */
+    user-select: none; /* Empêche la sélection du texte */
+    border: none;
+    width: 50%;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0; /* Masque la checkbox originale */
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Taille du checkmark */
+    width: 20px; /* Taille du checkmark */
+    background-color: white; /* Couleur de fond par défaut */
+    border: 2px solid RGB(201, 201, 202); /* Bordure du checkmark */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: white; /* Change la couleur au survol */
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #000000; /* Couleur de fond lorsque coché */
+    border-color: #000000; /* Bordure lorsque coché */
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* Couleur du checkmark */
+    border-width: 0 3px 3px 0; /* Forme du checkmark */
+    transform: rotate(45deg); /* Rotation pour former le symbole de check */
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0; /* Masque la checkbox originale */
+    cursor: pointer;
+    margin: 0; /* Enlève tout espacement par défaut */
+    border: none; /* Enlève la bordure */
+}

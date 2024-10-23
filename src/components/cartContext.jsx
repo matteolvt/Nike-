@@ -1,23 +1,20 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 const CartContext = createContext();
-
 
 export const useCart = () => useContext(CartContext);
 
 const cartReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
-      // Vérifier l'article existant par ID, taille et couleur
       const existingItemIndex = state.cartItems.findIndex(
         (item) =>
-          item.id === action.payload.id && // Vérifie que c'est le même produit
-          item.size === action.payload.size && // Vérifie la taille
-          item.color === action.payload.color // Vérifie la couleur
+          item.id === action.payload.id &&
+          item.size === action.payload.size &&
+          item.color === action.payload.color
       );
 
       if (existingItemIndex >= 0) {
-        // Si l'article avec la même taille et couleur existe, on met à jour la quantité
         const updatedCartItems = state.cartItems.map((item, index) =>
           index === existingItemIndex
             ? { ...item, quantity: item.quantity + action.payload.quantity }
@@ -25,20 +22,19 @@ const cartReducer = (state, action) => {
         );
         return { ...state, cartItems: updatedCartItems };
       } else {
-        // Sinon, on ajoute l'article comme nouveau
         return {
           ...state,
           cartItems: [...state.cartItems, action.payload],
         };
       }
 
-      case 'REMOVE_FROM_CART':
-        return {
-          ...state,
-          cartItems: state.cartItems.filter((item) => 
-            !(item.id === action.payload.id && item.size === action.payload.size && item.color === action.payload.color)
-          ),
-        };
+    case 'REMOVE_FROM_CART':
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((item) => 
+          !(item.id === action.payload.id && item.size === action.payload.size && item.color === action.payload.color)
+        ),
+      };
 
     case 'CLEAR_CART':
       return {
@@ -46,19 +42,19 @@ const cartReducer = (state, action) => {
         cartItems: [],
       };
 
-      case 'UPDATE_QUANTITY': {
-        const { id, size, color, delta } = action.payload;
-        return {
-          ...state,
-          cartItems: state.cartItems.map((item) => {
-            if (item.id === id && item.size === size && item.color === color) {
-              const newQuantity = item.quantity + delta;
-              return { ...item, quantity: newQuantity > 0 ? newQuantity : item.quantity }; // Quantité ne peut pas être négative
-            }
-            return item;
-          }),
-        };
-      }
+    case 'UPDATE_QUANTITY': {
+      const { id, size, color, delta } = action.payload;
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) => {
+          if (item.id === id && item.size === size && item.color === color) {
+            const newQuantity = item.quantity + delta;
+            return { ...item, quantity: newQuantity > 0 ? newQuantity : item.quantity };
+          }
+          return item;
+        }),
+      };
+    }
 
     default:
       return state;
@@ -66,7 +62,13 @@ const cartReducer = (state, action) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, { cartItems: [] });
+  // Charger le panier depuis localStorage lors de l'initialisation
+  const [state, dispatch] = useReducer(cartReducer, { cartItems: JSON.parse(localStorage.getItem('cartItems')) || [] });
+
+  useEffect(() => {
+    // Sauvegarder le panier dans localStorage lorsque cartItems change
+    localStorage.setItem('cartItems', JSON.stringify(state.cartItems));
+  }, [state.cartItems]);
 
   const addToCart = (item) => {
     dispatch({ type: 'ADD_TO_CART', payload: item });
