@@ -75,9 +75,9 @@ const Header = () => {
         <div className="navbar-center">
           <ul>
             <li><Link to="/products">Products</Link></li>
-            <li><Link to="/men">Men</Link></li>
-            <li><Link to="/women">Women</Link></li>
-            <li><Link to="/kids">Kids</Link></li>
+            <li><Link to="/men-shoes">Men</Link></li>
+            <li><Link to="/women-shoes">Women</Link></li>
+            <li><Link to="/kids-shoes">Kids</Link></li>
           </ul>
         </div>
         <div className="navbar-right">
