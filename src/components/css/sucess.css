@@ -11,33 +11,33 @@
     text-align: center; /* Centrer le texte */
   }
   
-  h1 {
+  .success-container h1 {
     font-size: 2.5rem; /* Taille de police plus grande */
     color: #111; /* Couleur noire profonde */
     margin-bottom: 10px;
   }
   
-  h2 {
+  .success-container h2 {
     font-size: 1.5rem; /* Taille de police moyenne */
     color: #555; /* Couleur gris pour le sous-titre */
     margin-bottom: 20px;
   }
   
-  ul {
+  .success-container ul {
     list-style: none; /* Supprimer les puces de la liste */
     padding: 0; /* Supprimer le padding */
     margin: 20px 0; /* Marge autour de la liste */
     text-align: left; /* Alignement à gauche pour les items de la liste */
   }
   
-  li {
+  .success-container li {
     margin: 10px 0; /* Espacement entre les items de la liste */
     font-size: 1rem; /* Taille de police standard */
     color: #333; /* Couleur gris foncé */
     padding-bottom: 10px; /* Espacement en bas */
   }
   
-  h3 {
+  .success-container h3 {
     font-size: 1.2rem; /* Taille de police pour le total */
     color: #111; /* Couleur noire pour le total */
     margin-top: 20px; /* Marge en haut */
