@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./css/menClothes.css";
+import "./css/menShoes.css";
 import ProductCard from "./productCard";
 import ProductFilter from "./productFilter";
 
