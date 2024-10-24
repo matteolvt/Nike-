@@ -1,72 +1,66 @@
 /* src/components/css/success.css */
 .success-container {
-    max-width: 600px; /* Largeur maximum pour le contenu */
-    margin: 0 auto; /* Centrer horizontalement */
-    padding: 20px; /* Espacement interne */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Occuper toute la hauteur de la fenêtre */
+    background-color: #f3f3f3; /* Fond gris clair */
+    font-family: 'Arial', sans-serif; /* Police de caractère moderne */
+    padding: 20px;
     text-align: center; /* Centrer le texte */
-    font-family: Arial, sans-serif; /* Police de caractère */
-    background-color: #f9f9f9; /* Couleur de fond claire */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
   }
   
-  .success-container h1 {
-    color: #28a745; /* Couleur verte pour le titre */
+  h1 {
+    font-size: 2.5rem; /* Taille de police plus grande */
+    color: #111; /* Couleur noire profonde */
+    margin-bottom: 10px;
   }
   
-  .success-container h2 {
-    color: #333; /* Couleur pour le sous-titre */
-    margin-bottom: 10px; /* Espacement en bas */
+  h2 {
+    font-size: 1.5rem; /* Taille de police moyenne */
+    color: #555; /* Couleur gris pour le sous-titre */
+    margin-bottom: 20px;
   }
   
-  .success-container ul {
+  ul {
     list-style: none; /* Supprimer les puces de la liste */
-    padding: 0; /* Supprimer le padding par défaut */
-    margin: 20px 0; /* Espacement autour de la liste */
+    padding: 0; /* Supprimer le padding */
+    margin: 20px 0; /* Marge autour de la liste */
+    text-align: left; /* Alignement à gauche pour les items de la liste */
   }
   
-  .success-container li {
-    margin: 5px 0; /* Espacement entre les éléments de la liste */
-    color: #555; /* Couleur pour les éléments de la liste */
+  li {
+    margin: 10px 0; /* Espacement entre les items de la liste */
+    font-size: 1rem; /* Taille de police standard */
+    color: #333; /* Couleur gris foncé */
+    padding-bottom: 10px; /* Espacement en bas */
   }
   
-  .success-container h3 {
-    color: #333; /* Couleur pour le total */
-    margin-top: 20px; /* Espacement au-dessus */
+  h3 {
+    font-size: 1.2rem; /* Taille de police pour le total */
+    color: #111; /* Couleur noire pour le total */
+    margin-top: 20px; /* Marge en haut */
   }
   
-  .success-container .shopping {
-    background-color: #007bff; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte */
+  .shopping {
+    background-color: #000; /* Fond noir */
+    color: white; /* Texte blanc */
     border: none; /* Pas de bordure */
-    padding: 10px 20px; /* Espacement interne */
     border-radius: 5px; /* Coins arrondis */
-    cursor: pointer; /* Pointeur de la souris */
-    font-size: 16px; /* Taille de police */
-    transition: background-color 0.3s; /* Transition douce pour le survol */
+    padding: 12px 20px; /* Espacement interne */
+    font-size: 1rem; /* Taille de police standard */
+    cursor: pointer; /* Curseur de souris en forme de main */
+    margin-top: 20px; /* Marge en haut */
+    transition: background-color 0.3s; /* Transition douce */
   }
   
-  .success-container .shopping:hover {
-    background-color: #0056b3; /* Couleur au survol */
+  .shopping:hover {
+    background-color: #333; /* Assombrir au survol */
   }
   
-  /* Styles pour les appareils mobiles */
-  @media (max-width: 600px) {
-    .success-container {
-      padding: 15px; /* Réduire le padding sur mobile */
-    }
-  
-    .success-container h1 {
-      font-size: 1.5rem; /* Ajuster la taille du titre */
-    }
-  
-    .success-container h2 {
-      font-size: 1.2rem; /* Ajuster la taille du sous-titre */
-    }
-  
-    .success-container .shopping {
-      width: 100%; /* Bouton pleine largeur sur mobile */
-      font-size: 18px; /* Agrandir le texte du bouton */
-    }
+  .empty-message {
+    color: #777; /* Couleur gris pour le message vide */
+    font-size: 1rem; /* Taille de police standard */
   }
   
