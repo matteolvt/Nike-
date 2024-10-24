@@ -2,8 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MySwiper from "./components/swiper";
 import ItemsList from "./components/itemsList";
 import Layout from "./components/layout";
-import ProductMen from "./components/men";
-import ProductWomen from "./components/women";
 import Help from "./components/help";
 import JoinUs from "./components/joinUs";
 import SignIn from "./components/signIn";
@@ -16,7 +14,6 @@ import WomenShoes from "./components/womenShoes";
 import WomenClothes from "./components/womenClothes";
 import WomenBags from "./components/womenBags";
 import WomenAccessories from "./components/womenAccessories";
-import ProductKids from "./components/kids";
 import KidsShoes from "./components/kidShoes";
 import KidsClothes from "./components/kidsClothes";
 import KidsBags from "./components/kidsBags";
@@ -50,10 +47,6 @@ const router = createBrowserRouter([
         element: <Help />,
       },
       {
-        path: "/men",
-        element: <ProductMen />,
-      },
-      {
         path: "/join-us",
         element: <JoinUs />,
       },
@@ -82,10 +75,6 @@ const router = createBrowserRouter([
         element: <MenAccessories />,
       },
       {
-        path: "/women",
-        element: <ProductWomen />,
-      },
-      {
         path: "/women-shoes",
         element: <WomenShoes />,
       },
@@ -100,10 +89,6 @@ const router = createBrowserRouter([
       {
         path: "/women-accessories",
         element: <WomenAccessories />,
-      },
-      {
-        path: "/kids",
-        element: <ProductKids />,
       },
       {
         path: "/kids-shoes",
