@@ -172,6 +172,76 @@
         padding: 10px;
         margin-right: 20px; /* Espace entre les filtres et les produits */
     }
-
     
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne */
+        gap: 15px; /* Ajuste l'espacement entre les cartes */
+    }
+
+    .product-card {
+        padding: 15px; /* Réduit le padding des cartes */
+    }
+
+    .product-card h3 {
+        font-size: 16px; /* Réduit la taille de la police du titre */
+    }
+
+    .product-card .price {
+        font-size: 14px; /* Réduit la taille de la police du prix */
+    }
+
+    .product-card button {
+        padding: 8px 16px; /* Réduit le padding du bouton */
+        font-size: 14px; /* Réduit la taille de la police du bouton */
+    }
+
+    .filter-container {
+        width: 100%;
+        padding: 10px;
+        margin-right: 20px; /* Espace entre les filtres et les produits */
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne */
+        gap: 250px; /* Ajuste l'espacement entre les cartes pour éviter les dépassements */
+        margin-bottom:-200px;
+    }
+
+    .product-card {
+        padding: 15px; /* Réduit le padding des cartes */
+        margin-bottom: 0; /* Enlève l'espacement en bas des produits */
+    }
+
+    .product-card img {
+        max-width: 100%; /* Assure que les images ne dépassent pas */
+        height: auto;
+    }
+
+    .product-card h3 {
+        font-size: 16px; /* Réduit la taille de la police du titre */
+    }
+
+    .product-card .price {
+        font-size: 14px; /* Réduit la taille de la police du prix */
+    }
+
+    .product-card button {
+        padding: 8px 16px; /* Réduit le padding du bouton */
+        font-size: 14px; /* Réduit la taille de la police du bouton */
+    }
+
+    .filter-container {
+        width: 100%;
+        padding: 10px;
+        margin-right: 20px; /* Espace entre les filtres et les produits */
+    }
+
+    .footer {
+        margin-top:250px; 
+    }
 }
