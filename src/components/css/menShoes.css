@@ -69,77 +69,109 @@
     color: #666;
   }
 
-@media screen and (max-width: 768px) {
-    * {
-        margin: 0; 
-        padding: 0;
-    }
 
-    .main-container {
-        display: block;
-        padding-top: 20px;
-        max-width: 100%; /* Ajuste la largeur maximale pour les appareils mobiles */
-        margin: 0;
-    }
+/* Responsive Styles */
 
-    /* Container des filtres */
-    .filter-container {
-        display: none; /* Masquer les filtres sur mobile */
-    }
-
-    /* Container des produits */
+/* Pour les tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .product-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne sur téléphone */
-        gap: 10px;
-        margin: 0; /* Supprime la marge à gauche */
-        justify-items: center; /* Centre les éléments dans le grid */
+        grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne */
+        gap: 15px; /* Ajuste l'espacement entre les cartes */
     }
 
-    .product-list .product-card {
-        background-color: white;
-        text-align: center;
-        transition: transform 0.3s;
-        margin-bottom: 10px; /* Espacement en bas pour éviter le contact avec d'autres éléments */
-        display: flex; /* Utilisez Flexbox pour aligner le contenu */
-        flex-direction: column; /* Aligne le contenu verticalement */
-        justify-content: space-between; /* Assure que les éléments prennent toute la hauteur disponible */
-        height: 100%; /* Assure que les cartes prennent toute la hauteur du conteneur */
-        width: 100%; /* Assure que les cartes prennent toute la largeur disponible */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoutez une légère ombre pour un effet esthétique */
-    }
-
-    .product-card img {
-        width: 100%; /* Assure que l'image prend toute la largeur */
-        height: 300px; /* Définissez une hauteur fixe pour l'image */
-        object-fit: cover; /* Ajuste l'image pour couvrir le conteneur sans déformer */
+    .product-card {
+        padding: 15px; /* Réduit le padding des cartes */
     }
 
     .product-card h3 {
-        font-size: 18px;
-        margin: 10px 0;
-    }
-
-    .product-card p {
-        font-size: 14px;
-        color: #777;
+        font-size: 16px; /* Réduit la taille de la police du titre */
     }
 
     .product-card .price {
-        font-size: 16px;
-        color: #000;
-        margin: 10px 0;
+        font-size: 14px; /* Réduit la taille de la police du prix */
     }
 
     .product-card button {
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        cursor: pointer;
+        padding: 8px 16px; /* Réduit le padding du bouton */
+        font-size: 14px; /* Réduit la taille de la police du bouton */
     }
 
-    .footer {
-        height: 100%;
+    .filter-container {
+        display: none;
     }
+}
+
+/* Pour les mobiles */
+@media screen and (max-width: 767px) {
+    .main-container {
+        flex-direction: column; /* Empile les filtres et produits verticalement */
+        padding: 10px; /* Réduit le padding pour mobile */
+    }
+
+    .filter-container {
+        margin-right: 0; /* Supprime l'espace à droite */
+        margin-bottom: 20px; /* Ajoute de l'espace en bas */
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne */
+        gap: 10px; /* Réduit l'espacement entre les cartes */
+    }
+
+    .product-card {
+        padding: 10px; /* Réduit le padding des cartes */
+    }
+
+    .product-card h3 {
+        font-size: 16px; /* Réduit la taille de la police du titre */
+    }
+
+    .product-card p {
+        font-size: 12px; /* Réduit la taille de la police de la description */
+    }
+
+    .product-card .price {
+        font-size: 14px; /* Réduit la taille de la police du prix */
+    }
+
+    .product-card button {
+        padding: 8px 12px; /* Réduit le padding du bouton */
+        font-size: 12px; /* Réduit la taille de la police du bouton */
+    }
+
+    .filter-container {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne */
+        gap: 15px; /* Ajuste l'espacement entre les cartes */
+    }
+
+    .product-card {
+        padding: 15px; /* Réduit le padding des cartes */
+    }
+
+    .product-card h3 {
+        font-size: 16px; /* Réduit la taille de la police du titre */
+    }
+
+    .product-card .price {
+        font-size: 14px; /* Réduit la taille de la police du prix */
+    }
+
+    .product-card button {
+        padding: 8px 16px; /* Réduit le padding du bouton */
+        font-size: 14px; /* Réduit la taille de la police du bouton */
+    }
+
+    .filter-container {
+        width: 100%;
+        padding: 10px;
+        margin-right: 20px; /* Espace entre les filtres et les produits */
+    }
+
+    
 }
