@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./css/kidsShoes.css";
+import "./css/menShoes.css";
 import ProductCard from "./productCard";
+import ProductFilter from "./productFilter";
 
-const KidsClothes = () => {
+const kidsClothes = () => {
   const [filters, setFilters] = useState({
     size: [],
     width: [],
-    activity: [],
-    color: [],
+    activities: [],
     model: [],
     price: [],
   });
@@ -16,41 +16,18 @@ const KidsClothes = () => {
   const [openFilters, setOpenFilters] = useState({
     size: false,
     width: false,
-    activity: false,
-    color: false,
+    activities: false,
     model: false,
     price: false,
   });
 
-  const handleFilterChange = (category, value) => {
-    setFilters((prevFilters) => {
-      const isSelected = prevFilters[category].includes(value);
-      return {
-        ...prevFilters,
-        [category]: isSelected
-          ? prevFilters[category].filter((item) => item !== value)
-          : [...prevFilters[category], value],
-      };
-    });
+  const filterOptions = {
+    size: ["XS", "S", "M", "L", "XL"],
+    width: ["Regular", "Wide"],
+    activities: ["Running", "Trail"],
+    model: ["Model A", "Model B"],
+    price: ["0-25", "25-50", "50-100", "100-150", "150-200"],
   };
-
-  const toggleFilter = (id) => {
-    // Gestion de l'affichage du contenu du filtre
-    const element = document.getElementById(id);
-    if (element.style.display === "block") {
-      element.style.display = "none";
-    } else {
-      element.style.display = "block";
-    }
-    setOpenFilters((prevOpenFilters) => ({
-      ...prevOpenFilters,
-      [id]: !prevOpenFilters[id], // Inverse l'état actuel (ouvert/fermé)
-    }));
-  };
-
-  useEffect(() => {
-    console.log("Filters applied:", filters);
-  }, [filters]);
 
   const products = [
     {
@@ -59,7 +36,10 @@ const KidsClothes = () => {
       image: "/images/b1e72ee6_830e_41fd_8fe1_93f30b813f8e.webp",
       name: "FC Barcelona 2024/25 Stadium 3rd Kit",
       description: "Older Kids' Nike Dri-FIT Football Replica Shirt",
-      colors: 1,
+      size: "XS",
+      width: "Regular",
+      activities: ["Running"],
+      model: "Model A",
       price: 79.99,
     },
     {
@@ -68,7 +48,10 @@ const KidsClothes = () => {
       image: "/images/FCB+Y+NK+DF+SHORT+STAD+3R.png",
       name: "FC Barcelona 2024/25 Stadium 3rd Kit",
       description: "Replica Nike Dri-FIT Football Shorts - Boy / Girl",
-      colors: 2,
+      size: "S",
+      width: "Regular",
+      activities: ["Running"],
+      model: "Model A",
       price: 39.99,
     },
     {
@@ -77,7 +60,10 @@ const KidsClothes = () => {
       image: "/images/FCB+LK+NK+DF+KIT+STAD+3R.png",
       name: "FC Barcelona 2024/25 Stadium 3rd Kit",
       description: "Nike Football Replica Three-Piece Kit - Toddler",
-      colors: 1,
+      size: "L",
+      width: "Regular",
+      activities: ["Running"],
+      model: "Model A",
       price: 69.99,
     },
     {
@@ -86,7 +72,10 @@ const KidsClothes = () => {
       image: "/images/FCB+Y+NK+DF+JSY+SS+STAD+HM.jpeg",
       name: "FC Barcelona Strike 3rd Kit",
       description: "Nike Dri-FIT Replica Football Shirt - Boy / Girl",
-      colors: 1,
+      size: "XL",
+      width: "Regular",
+      activities: ["Running"],
+      model: "Model A",
       price: 79.99,
     },
     {
@@ -95,7 +84,10 @@ const KidsClothes = () => {
       image: "/images/FCB+YNK+DF+ACDPR+SS+TOP+K+AWPM.png",
       name: "FC Barcelona Academy Pro",
       description: "Nike Dri-FIT Youth Soccer Training Top",
-      colors: 1,
+      size: "M",
+      width: "Regular",
+      activities: ["Running"],
+      model: "Model A",
       price: 59.99,
     },
     {
@@ -104,18 +96,48 @@ const KidsClothes = () => {
       image: "/images/FCB+YNK+DF+STRK+DRILL+TOP+K.jpeg",
       name: "FC Barcelona Strike Third",
       description: "Nike Dri-FIT Training Football Shirt - Boy/Girl",
-      colors: 1,
+      size: "XS",
+      width: "Regular",
+      activities: ["Running"],
+      model: "Model A",
       price: 39.99,
     },
-    // Ajoute d'autres modèles Nike si nécessaire
   ];
+
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
+  // Fonction de filtrage des produits
+  const filterProducts = () => {
+    const result = products.filter((product) => {
+      const sizeMatch = filters.size.length ? filters.size.includes(product.size) : true;
+      const widthMatch = filters.width.length ? filters.width.includes(product.width) : true;
+      const activitiesMatch = filters.activities.length
+        ? filters.activities.some((activity) => product.activities.includes(activity))
+        : true;
+      const modelMatch = filters.model.length ? filters.model.includes(product.model) : true;
+      const priceMatch = filters.price.length
+        ? filters.price.some((range) => {
+            const [min, max] = range.split("-").map(Number);
+            return product.price >= min && product.price <= (max || Infinity);
+          })
+        : true;
+
+      return sizeMatch && widthMatch && activitiesMatch && modelMatch && priceMatch;
+    });
+
+    setFilteredProducts(result);
+  };
+
+  useEffect(() => {
+    filterProducts();
+  }, [filters]);
 
   return (
     <>
       <section className="after-navbar">
         <div className="anavbar-left">
-          <h3>Kids&apos; Clothing</h3>
-          <h3 id="an-phone">Kids&apos; Clothing</h3>
+          <h3>Women's Clothing</h3>
+          <h3 id="an-phone">Women's Clothing</h3>
         </div>
         <div className="anavbar-center">
           <Link to="/kids-shoes">Shoes</Link>
@@ -126,238 +148,31 @@ const KidsClothes = () => {
       </section>
       <main>
         <div className="main-container">
-          <div className="filter-container">
-            {/* Filtres de taille */}
-            <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("size")}
-              >
-                Size{" "}
-                <span className="toggle-icon">
-                  {openFilters.size ? "-" : "+"}
-                </span>
-              </button>
-              <hr />
-              <div id="size" className="filter-content">
-                <label className="checkbox-container">
-                  Small
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("size", "small")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Medium
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("size", "medium")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Large
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("size", "large")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-            </div>
-
-            {/* Répète cette structure pour chaque filtre */}
-            <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("width")}
-              >
-                Width{" "}
-                <span className="toggle-icon">
-                  {openFilters.width ? "-" : "+"}
-                </span>
-              </button>
-              <hr />
-              <div id="width" className="filter-content">
-                <label className="checkbox-container">
-                  Regular
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("width", "regular")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Wide
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("width", "wide")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-            </div>
-            <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("activities")}
-              >
-                Activities{" "}
-                <span className="toggle-icon">
-                  {openFilters.activities ? "-" : "+"}
-                </span>
-              </button>
-              <hr />
-              <div id="activities" className="filter-content">
-                <label className="checkbox-container">
-                  Running
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("activities", "running")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Trail
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("activities", "Trail")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-            </div>
-            <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("color")}
-              >
-                Color{" "}
-                <span className="toggle-icon">
-                  {openFilters.color ? "-" : "+"}
-                </span>
-              </button>
-              <hr />
-              <div id="color" className="filter-content">
-                <label className="checkbox-container">
-                  Blue
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("color", "blue")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Red
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("color", "red")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-            </div>
-            <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("model")}
-              >
-                Model{" "}
-                <span className="toggle-icon">
-                  {openFilters.model ? "-" : "+"}
-                </span>
-              </button>
-              <hr />
-              <div id="model" className="filter-content">
-                <label className="checkbox-container">
-                  Model A
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("model", "model a")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  Model B
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("model", "model b")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-            </div>
-            <div className="filter">
-              <button
-                className="filter-btn"
-                onClick={() => toggleFilter("price")}
-              >
-                Price{" "}
-                <span className="toggle-icon">
-                  {openFilters.price ? "-" : "+"}
-                </span>
-              </button>
-              <hr />
-              <div id="price" className="filter-content">
-                <label className="checkbox-container">
-                  0-25€
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("price", "0-25")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  25-50€
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("price", "25-50")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  50-100€
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("price", "50-100")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  100-150€
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("price", "100-150")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-                <label className="checkbox-container">
-                  150-200€
-                  <input
-                    type="checkbox"
-                    onChange={() => handleFilterChange("price", "150-200")}
-                  />
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          {/* Liste des produits */}
+          <ProductFilter
+            filters={filters}
+            setFilters={setFilters}
+            openFilters={openFilters}
+            setOpenFilters={setOpenFilters}
+            filterOptions={filterOptions}
+          />
           <div className="product-list">
-            {products.map((product) => (
-              <ProductCard
-              key={product.name}
-              id={product.id} 
-              image={product.image}
-              name={product.name}
-              description={product.description}
-              colors={product.colors}
-              price={product.price}
-              product={product} 
-              />
-            ))}
+            {filteredProducts.length === 0 ? (
+              <div className="no-products-message">
+                Sorry, but there are no articles for this filter.
+              </div>
+            ) : (
+              filteredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  image={product.image}
+                  name={product.name}
+                  description={product.description}
+                  price={product.price}
+                  product={product}
+                />
+              ))
+            )}
           </div>
         </div>
       </main>
@@ -365,4 +180,4 @@ const KidsClothes = () => {
   );
 };
 
-export default KidsClothes;
+export default kidsClothes
