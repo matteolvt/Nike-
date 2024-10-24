@@ -513,3 +513,239 @@ h3 {
     }
 }
 
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .before-navbar {
+        width: 100%;
+        height: 75px;
+        background-color: #003D98;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .bnavbar-left {
+        height: 100%;
+        width: 35%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bnavbar-left img {
+        height: 25px;
+        width: 25px;
+        padding-left: 10px;
+    }
+
+    .bnavbar-left a {
+        width: 100px;
+        height: 11px;
+        text-decoration: none;
+        color: #EDBB00;
+        padding: 0 10px;
+        font-size: 0.7em;
+    }
+
+    .bnavbar-center {
+        height: 100%;
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bnavbar-center img {
+        width: 35px;
+        height: 35.15px;
+    }
+
+    .bnavbar-right {
+        height: 100%;
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-right: 5px;
+    }
+
+    .bnavbar-right span {
+        display: block;
+        color: white;
+    }
+
+    .bnavbar-right a {
+        color: #EDBB00;
+        text-decoration: none;
+    }
+
+    .bnavbar-right li, .search-bar, .icons, .anavbar-center {
+        display: none;
+    }
+
+    .navbar-left {
+        width: 25%;
+    }
+
+    .navbar-center {
+        width: 75%;
+    }
+
+    .navbar-right {
+        display: none;
+    }
+
+    .phone-part {
+        display: block;
+    }
+
+    .pc-part {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; 
+    }
+
+    .product-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        flex: 0 0 48%;  
+        box-sizing: border-box;
+        margin-bottom: 20px; 
+    }
+
+    .product-image {
+        width: 100%;
+        aspect-ratio: 1 / 1; 
+    }
+
+    .product-info {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+    }
+
+    h3 {
+        margin-top: 5px;
+        font-size: 4vw; 
+        font-weight: bold;
+    }
+
+    .description, .colors {
+        color: grey;
+        font-size: 3.5vw; 
+        margin-top: 5px;
+    }
+
+    .price {
+        font-size: 4vw; 
+        margin-top: 10px; 
+    }
+
+    .footer {
+        background-color: #A50044;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0; 
+    }
+
+    .footer-top {
+        width: 80%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: flex-start;
+        margin-bottom: 20px; 
+    }
+
+    .footer-top img {
+        height: 40px;
+        width: 40px; 
+    }
+
+    .footer-logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 10px;
+    }
+
+    .footer-top div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-title {
+        color: white;
+        font-size: 20px; 
+        margin-bottom: 10px;
+    }
+
+    .footer-items {
+        color: white;
+        font-size: 15px; 
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        color: white;
+        font-size: 15px; 
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .before-navbar {
+        height: 60px; /* Ajustement de la hauteur si nécessaire */
+    }
+
+    .bnavbar-left,
+    .bnavbar-center,
+    .bnavbar-right {
+        width: 33%; /* Largeurs équilibrées pour la barre de navigation */
+    }
+
+    .navbar {
+        height: 80px; /* Ajustement de la hauteur de la barre de navigation */
+    }
+
+    .navbar-left {
+        width: 25%; /* Largeur ajustée pour la section gauche */
+    }
+
+    .navbar-center {
+        width: 40%; /* Largeur ajustée pour la section centrale */
+    }
+
+    .navbar-right {
+        width: 35%; /* Largeur ajustée pour la section droite afin de faire de la place pour les icônes */
+        display: flex; /* S'assure que les éléments de la section droite sont affichés en ligne */
+        justify-content: flex-end; /* Aligne les icônes à droite */
+        align-items: center; /* Aligne les icônes verticalement au centre */
+    }
+
+    .navbar-right .icons {
+        margin-left: 20px; /* Espace entre les icônes */
+    }
+
+    .navbar-right span {
+        display: inline; /* Assure que les éléments span s'affichent */
+        font-size: 24px; /* Taille des icônes */
+        margin-left: 10px; /* Espacement entre les icônes */
+    }
+
+    .search-bar {
+        width: auto; /* Permet à la barre de recherche de conserver une taille appropriée */
+        margin: 0 10px; /* Ajoute de la marge pour espacer la barre de recherche des icônes */
+    }
+
+    .icons {
+        display: flex; /* Affiche les icônes en ligne */
+        align-items: center; /* Aligne les icônes verticalement au centre */
+    }
+}

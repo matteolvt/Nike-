@@ -196,3 +196,278 @@
         margin-top: 100px;
     }
 }
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .list-of-items {
+        height: auto; /* Ajustement de la hauteur pour un meilleur affichage */
+        padding: 0; /* Retrait du padding pour un espacement sur les côtés */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px; /* Ajouter un espacement entre les sections */
+        padding: 0; /* Retrait du padding pour ne pas avoir d'espacement sur les côtés */
+    }
+
+    .shoes-title,
+    .clothes-title,
+    .news-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Espace sous le titre */
+    }
+
+    .shoes-title a,
+    .clothes-title a {
+        font-size: 1.6em; /* Légère augmentation de la taille du texte */
+        margin: 0;
+        padding-bottom: 20px; /* Ajouter un espace sous le texte */
+    }
+
+    .shoes-items,
+    .clothes-items,
+    .news-items {
+        flex-direction: row;
+        justify-content: space-between; /* Assure que les images sont espacées de manière égale */
+        margin-left: 0;
+        margin-right: 0; /* Retrait de l'espacement à droite */
+        width: 100%;
+    }
+
+    .shoes-item1,
+    .shoes-item2,
+    .shoes-item3,
+    .clothes-item1,
+    .clothes-item2,
+    .clothes-item3 {
+        width: 30%; /* Réduction de la largeur pour s'assurer que les 3 items tiennent sur la même ligne */
+        margin-bottom: 30px; /* Ajouter un espacement entre les items */
+    }
+
+    .shoes-item1 img,
+    .shoes-item2 img,
+    .shoes-item3 img,
+    .clothes-item1 img,
+    .clothes-item2 img,
+    .clothes-item3 img {
+        width: 100%; /* Ajustement pour occuper toute la largeur disponible */
+        height: auto;
+        margin: 0; /* Retrait de l'espacement autour des images */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        position: relative;
+    }
+}
+
+/* Écrans moyens (1025px à 1280px) */
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .list-of-items {
+        height: auto; /* Ajustement de la hauteur pour un meilleur affichage */
+        padding: 0; /* Retrait du padding pour un espacement sur les côtés */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px; /* Ajouter un espacement entre les sections */
+        padding: 0; /* Retrait du padding pour ne pas avoir d'espacement sur les côtés */
+    }
+
+    .shoes-title,
+    .clothes-title,
+    .news-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Espace sous le titre */
+    }
+
+    .shoes-title a,
+    .clothes-title a {
+        font-size: 1.6em; /* Légère augmentation de la taille du texte */
+        margin: 0;
+        padding-bottom: 20px; /* Ajouter un espace sous le texte */
+    }
+
+    .shoes-items,
+    .clothes-items,
+    .news-items {
+        flex-direction: row;
+        justify-content: space-between; /* Assure que les images sont espacées de manière égale */
+        margin-left: 0;
+        margin-right: 0; /* Retrait de l'espacement à droite */
+        width: 100%;
+    }
+
+    .shoes-item1,
+    .shoes-item2,
+    .shoes-item3,
+    .clothes-item1,
+    .clothes-item2,
+    .clothes-item3 {
+        width: 30%; /* Réduction de la largeur pour s'assurer que les 3 items tiennent sur la même ligne */
+        margin-bottom: 30px; /* Ajouter un espacement entre les items */
+    }
+
+    .shoes-item1 img,
+    .shoes-item2 img,
+    .shoes-item3 img,
+    .clothes-item1 img,
+    .clothes-item2 img,
+    .clothes-item3 img {
+        width: 100%; /* Ajustement pour occuper toute la largeur disponible */
+        height: auto;
+        margin: 0; /* Retrait de l'espacement autour des images */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        position: relative;
+    }
+}
+
+
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    .list-of-items {
+        height: auto; /* Ajustement de la hauteur pour un meilleur affichage */
+        padding: 0; /* Retrait du padding pour un espacement sur les côtés */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px; /* Ajouter un espacement entre les sections */
+        padding: 0; /* Retrait du padding pour ne pas avoir d'espacement sur les côtés */
+    }
+
+    .shoes-title,
+    .clothes-title,
+    .news-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Espace sous le titre */
+    }
+
+    .shoes-title a,
+    .clothes-title a {
+        font-size: 1.6em; /* Légère augmentation de la taille du texte */
+        margin: 0;
+        padding-bottom: 20px; /* Ajouter un espace sous le texte */
+    }
+
+    .shoes-items,
+    .clothes-items,
+    .news-items {
+        flex-direction: row;
+        justify-content: space-between; /* Assure que les images sont espacées de manière égale */
+        margin-left: 0;
+        margin-right: 0; /* Retrait de l'espacement à droite */
+        width: 100%;
+    }
+
+    .shoes-item1,
+    .shoes-item2,
+    .shoes-item3,
+    .clothes-item1,
+    .clothes-item2,
+    .clothes-item3 {
+        width: 30%; /* Réduction de la largeur pour s'assurer que les 3 items tiennent sur la même ligne */
+        margin-bottom: 30px; /* Ajouter un espacement entre les items */
+    }
+
+    .shoes-item1 img,
+    .shoes-item2 img,
+    .shoes-item3 img,
+    .clothes-item1 img,
+    .clothes-item2 img,
+    .clothes-item3 img {
+        width: 100%; /* Ajustement pour occuper toute la largeur disponible */
+        height: auto;
+        margin: 0; /* Retrait de l'espacement autour des images */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1700px) {
+    .list-of-items {
+        height: auto; /* Ajustement de la hauteur pour un meilleur affichage */
+        padding: 0; /* Retrait du padding pour un espacement sur les côtés */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px; /* Ajouter un espacement entre les sections */
+        padding: 0; /* Retrait du padding pour ne pas avoir d'espacement sur les côtés */
+    }
+
+    .shoes-title,
+    .clothes-title,
+    .news-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Espace sous le titre */
+    }
+
+    .shoes-title a,
+    .clothes-title a {
+        font-size: 1.6em; /* Légère augmentation de la taille du texte */
+        margin: 0;
+        padding-bottom: 20px; /* Ajouter un espace sous le texte */
+    }
+
+    .shoes-items,
+    .clothes-items,
+    .news-items {
+        flex-direction: row;
+        justify-content: space-between; /* Assure que les images sont espacées de manière égale */
+        margin-left: 0;
+        margin-right: 0; /* Retrait de l'espacement à droite */
+        width: 100%;
+    }
+
+    .shoes-item1,
+    .shoes-item2,
+    .shoes-item3,
+    .clothes-item1,
+    .clothes-item2,
+    .clothes-item3 {
+        width: 30%; /* Réduction de la largeur pour s'assurer que les 3 items tiennent sur la même ligne */
+        margin-bottom: 30px; /* Ajouter un espacement entre les items */
+    }
+
+    .shoes-item1 img,
+    .shoes-item2 img,
+    .shoes-item3 img,
+    .clothes-item1 img,
+    .clothes-item2 img,
+    .clothes-item3 img {
+        width: 100%; /* Ajustement pour occuper toute la largeur disponible */
+        height: auto;
+        margin: 0; /* Retrait de l'espacement autour des images */
+    }
+
+    .shoes,
+    .clothes,
+    .news {
+        position: relative;
+    }
+}
