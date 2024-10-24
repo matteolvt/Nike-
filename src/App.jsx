@@ -27,6 +27,7 @@ import ShoppingBag from "./components/shoppingBag";
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import ProductFilter from "./components/productFilter";
+import SuccessPage from "./components/success";
 
 const stripePromise = loadStripe('pk_test_51QCdJgHs61E5vpBsMETOqjZoek8o1TwoHFdB0fNWchZCeXzV50St0LqDKxZ5Lw88nXuMXJGljsEew7yHv8SZqlGz00yIW0GDhY');
 
@@ -127,6 +128,10 @@ const router = createBrowserRouter([
       {
         path: "/productFilter",
         element: <ProductFilter />,
+      },
+      {
+        path: "/successPage",
+        element: <SuccessPage />,
       },
       {
         path: "/shoppingBag",

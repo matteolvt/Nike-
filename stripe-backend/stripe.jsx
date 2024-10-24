@@ -25,7 +25,7 @@ app.post('/create-checkout-session', async (req, res) => {
     payment_method_types: ['card'],
     line_items,
     mode: 'payment',
-    success_url: 'https://your-site.com/success',
+    success_url: 'http://localhost:5173/successPage',
     cancel_url: 'http://localhost:5173/shoppingBag',
   });
 

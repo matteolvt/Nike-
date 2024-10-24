@@ -1,0 +1,72 @@
+/* src/components/css/success.css */
+.success-container {
+    max-width: 600px; /* Largeur maximum pour le contenu */
+    margin: 0 auto; /* Centrer horizontalement */
+    padding: 20px; /* Espacement interne */
+    text-align: center; /* Centrer le texte */
+    font-family: Arial, sans-serif; /* Police de caractère */
+    background-color: #f9f9f9; /* Couleur de fond claire */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  }
+  
+  .success-container h1 {
+    color: #28a745; /* Couleur verte pour le titre */
+  }
+  
+  .success-container h2 {
+    color: #333; /* Couleur pour le sous-titre */
+    margin-bottom: 10px; /* Espacement en bas */
+  }
+  
+  .success-container ul {
+    list-style: none; /* Supprimer les puces de la liste */
+    padding: 0; /* Supprimer le padding par défaut */
+    margin: 20px 0; /* Espacement autour de la liste */
+  }
+  
+  .success-container li {
+    margin: 5px 0; /* Espacement entre les éléments de la liste */
+    color: #555; /* Couleur pour les éléments de la liste */
+  }
+  
+  .success-container h3 {
+    color: #333; /* Couleur pour le total */
+    margin-top: 20px; /* Espacement au-dessus */
+  }
+  
+  .success-container .shopping {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Pointeur de la souris */
+    font-size: 16px; /* Taille de police */
+    transition: background-color 0.3s; /* Transition douce pour le survol */
+  }
+  
+  .success-container .shopping:hover {
+    background-color: #0056b3; /* Couleur au survol */
+  }
+  
+  /* Styles pour les appareils mobiles */
+  @media (max-width: 600px) {
+    .success-container {
+      padding: 15px; /* Réduire le padding sur mobile */
+    }
+  
+    .success-container h1 {
+      font-size: 1.5rem; /* Ajuster la taille du titre */
+    }
+  
+    .success-container h2 {
+      font-size: 1.2rem; /* Ajuster la taille du sous-titre */
+    }
+  
+    .success-container .shopping {
+      width: 100%; /* Bouton pleine largeur sur mobile */
+      font-size: 18px; /* Agrandir le texte du bouton */
+    }
+  }
+  

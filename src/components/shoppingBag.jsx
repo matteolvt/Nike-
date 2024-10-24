@@ -13,6 +13,9 @@ const CartPage = () => {
   const elements = useElements();
 
   const handleCheckout = async () => {
+    // Supprimer cette ligne car `req` n'est pas défini ici
+    // console.log('Request body:', req.body);
+  
     const response = await fetch('http://localhost:3002/create-checkout-session', {
       method: 'POST',
       headers: {
@@ -20,6 +23,13 @@ const CartPage = () => {
       },
       body: JSON.stringify({ items: cartItems }),
     });
+  
+    // Vérifie si la réponse est correcte
+    if (!response.ok) {
+      const errorMessage = await response.text();
+      console.error('Error during checkout:', errorMessage);
+      return;
+    }
   
     const session = await response.json();
   
