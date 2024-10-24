@@ -208,8 +208,9 @@
 @media screen and (min-width: 1441px) and (max-width: 1600px) {
     .product-list {
         grid-template-columns: repeat(2, 1fr); /* Affiche 2 produits par ligne */
-        gap: 250px; /* Ajuste l'espacement entre les cartes pour éviter les dépassements */
+        gap: 200px; /* Ajuste l'espacement entre les cartes pour éviter les dépassements */
         margin-bottom:-200px;
+        margin-left: 100px; 
     }
 
     .product-card {
