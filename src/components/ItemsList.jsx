@@ -1,4 +1,5 @@
 import "./css/itemsList.css"
+import { Link } from "react-router-dom";
 
 const ItemsList = () => {
     return(
@@ -6,7 +7,7 @@ const ItemsList = () => {
         <section className="list-of-items">
       <div className="shoes">
         <div className="shoes-title">
-          <a href="#">Shoes -&gt;</a>
+          <Link to="/products">Shoes -&gt;</Link>
         </div>
         <div className="shoes-items">
           <div className="shoes-item1">
@@ -23,7 +24,7 @@ const ItemsList = () => {
 
       <div className="clothes">
         <div className="clothes-title">
-          <a href="#">Clothes -&gt;</a>
+        <Link to="/products">Clothes -&gt;</Link>
         </div>
         <div className="clothes-items">
           <div className="clothes-item1">
