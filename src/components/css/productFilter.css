@@ -38,6 +38,7 @@
 .filter-content label {
     display: block;
     margin: 5px 0;
+    font-size: 1em;
 }
 
 .size-container {
